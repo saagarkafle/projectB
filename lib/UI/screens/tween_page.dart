@@ -50,7 +50,7 @@ class _TweenPageState extends State<TweenPage>
     return Scaffold(
       backgroundColor: AppColors.bgGreyColor,
       appBar: AppBar(
-        title: const Text('Tween Animation Practice'),
+        title: const Text('Tween Animation'),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.w),

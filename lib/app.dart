@@ -1,9 +1,10 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
+import 'UI/screens/animated_icon.dart';
 import 'UI/screens/home_page.dart';
 import 'UI/screens/photos_page.dart';
 import 'UI/screens/shimmer_page.dart';
-import 'UI/screens/second_page.dart';
+import 'UI/screens/custom_paint.dart';
 import 'UI/screens/tween_page.dart';
 
 class AppModule extends Module {
@@ -19,7 +20,7 @@ class AppModule extends Module {
         ),
         ChildRoute(
           '/second',
-          child: (context, args) => const SecondPage(),
+          child: (context, args) => const CustomPaintPage(),
           transition: TransitionType.fadeIn,
           duration: const Duration(milliseconds: 600),
         ),
@@ -38,6 +39,12 @@ class AppModule extends Module {
         ChildRoute(
           '/tween',
           child: (context, args) => const TweenPage(),
+          transition: TransitionType.fadeIn,
+          duration: const Duration(milliseconds: 600),
+        ),
+        ChildRoute(
+          '/animatedicon',
+          child: (context, args) => const AnimatedIconPage(),
           transition: TransitionType.fadeIn,
           duration: const Duration(milliseconds: 600),
         ),

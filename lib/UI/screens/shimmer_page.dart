@@ -11,7 +11,7 @@ class ThirdPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.bgGreyColor,
-      appBar: AppBar(title: const Text('Title 2')),
+      appBar: AppBar(title: const Text('Shimmer effect')),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),

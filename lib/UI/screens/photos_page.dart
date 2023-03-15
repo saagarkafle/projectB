@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_unnecessary_containers
 
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class HomePagee extends StatefulWidget {
   const HomePagee({super.key});
