@@ -4,6 +4,7 @@ import 'UI/screens/home_page.dart';
 import 'UI/screens/photos_page.dart';
 import 'UI/screens/shimmer_page.dart';
 import 'UI/screens/second_page.dart';
+import 'UI/screens/tween_page.dart';
 
 class AppModule extends Module {
   // @override
@@ -34,11 +35,11 @@ class AppModule extends Module {
           transition: TransitionType.fadeIn,
           duration: const Duration(milliseconds: 600),
         ),
-        // ChildRoute(
-        //   '/tween',
-        //   child: (context, args) => const TweenPage(),
-        //   transition: TransitionType.fadeIn,
-        //   duration: const Duration(milliseconds: 600),
-        // ),
+        ChildRoute(
+          '/tween',
+          child: (context, args) => const TweenPage(),
+          transition: TransitionType.fadeIn,
+          duration: const Duration(milliseconds: 600),
+        ),
       ];
 }
