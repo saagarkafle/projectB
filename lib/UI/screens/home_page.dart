@@ -45,6 +45,10 @@ class HomePage extends StatelessWidget {
                     title: 'Animated Icon',
                     onPressed: () => Modular.to.pushNamed('/animatedicon'),
                   ),
+                  CustomCard(
+                    title: 'Date Range',
+                    onPressed: () => Modular.to.pushNamed('/dateRange'),
+                  ),
                   // CustomCard(title: 'Todo 6'),
                   // CustomCard(title: 'Todo 9'),
                   // CustomCard(title: 'Todo 8'),

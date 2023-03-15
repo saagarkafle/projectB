@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:whatsapp/UI/screens/date_range_page.dart';
 
 import 'UI/screens/animated_icon.dart';
 import 'UI/screens/home_page.dart';
@@ -45,6 +46,12 @@ class AppModule extends Module {
         ChildRoute(
           '/animatedicon',
           child: (context, args) => const AnimatedIconPage(),
+          transition: TransitionType.fadeIn,
+          duration: const Duration(milliseconds: 600),
+        ),
+        ChildRoute(
+          '/dateRange',
+          child: (context, args) => const DateRangePicked(),
           transition: TransitionType.fadeIn,
           duration: const Duration(milliseconds: 600),
         ),
