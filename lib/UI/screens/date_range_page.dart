@@ -67,6 +67,7 @@
 // }
 // main.dart
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:whatsapp/constants/colours.dart';
 
 class DateRangePicked extends StatefulWidget {
@@ -79,7 +80,6 @@ class DateRangePicked extends StatefulWidget {
 class _DateRangePickedState extends State<DateRangePicked> {
   DateTimeRange? _selectedDateRange;
 
-  // This function will be triggered when the floating button is pressed
   void _show() async {
     final DateTimeRange? result = await showDateRangePicker(
       context: context,
@@ -90,8 +90,6 @@ class _DateRangePickedState extends State<DateRangePicked> {
     );
 
     if (result != null) {
-      // Rebuild the UI
-      print(result.start.toString());
       setState(() {
         _selectedDateRange = result;
       });
@@ -107,23 +105,20 @@ class _DateRangePickedState extends State<DateRangePicked> {
               child: Text('Press the button to show the picker'),
             )
           : Padding(
-              padding: const EdgeInsets.all(30),
+              padding: EdgeInsets.all(30.w),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Start date
                   Text(
                     "Start date: ${_selectedDateRange?.start.toString().split(' ')[0]}",
-                    style: TextStyle(fontSize: 24, color: AppColors.greenColor),
+                    style:
+                        TextStyle(fontSize: 24.sp, color: AppColors.greenColor),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  // End date
+                  SizedBox(height: 20.h),
                   Text(
                       "End date: ${_selectedDateRange?.end.toString().split(' ')[0]}",
-                      style:
-                          TextStyle(fontSize: 24, color: AppColors.orangeColor))
+                      style: TextStyle(
+                          fontSize: 24.sp, color: AppColors.orangeColor))
                 ],
               ),
             ),

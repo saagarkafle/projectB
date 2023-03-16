@@ -2,6 +2,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:whatsapp/UI/screens/date_range_page.dart';
 
 import 'UI/screens/animated_icon.dart';
+import 'UI/screens/cp2page.dart';
 import 'UI/screens/home_page.dart';
 import 'UI/screens/photos_page.dart';
 import 'UI/screens/shimmer_page.dart';
@@ -52,6 +53,12 @@ class AppModule extends Module {
         ChildRoute(
           '/dateRange',
           child: (context, args) => const DateRangePicked(),
+          transition: TransitionType.fadeIn,
+          duration: const Duration(milliseconds: 600),
+        ),
+        ChildRoute(
+          '/cp',
+          child: (context, args) => const CustomPaintPage2(),
           transition: TransitionType.fadeIn,
           duration: const Duration(milliseconds: 600),
         ),

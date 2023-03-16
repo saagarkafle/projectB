@@ -15,7 +15,7 @@ class CirclePainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
 
-    // Offset center = Offset(size.width / 2, size.height / 2);
+    Offset center = Offset(size.width / 2, size.height / 2);
     // Offset start = const Offset(0, 0);
     // Offset end = const Offset(100, 0);
 
@@ -40,15 +40,16 @@ class CirclePainter extends CustomPainter {
     // canvas.drawRect(const Offset(150, 150) & const Size(200, 200), paint);
 
     canvas.drawArc(
-        const Offset(150, 200) & const Size(200, 200), 1, 1, true, paint);
-    canvas.drawArc(
-        const Offset(150, 200) & const Size(200, 200), 4, 1, false, paint);
-    canvas.drawArc(
-        const Offset(150, 200) & const Size(200, 200), 6, 1, false, paint);
+        const Offset(50, 50) & const Size(200, 200), 1, 1, false, paint);
+    // canvas.drawArc(
+    //     const Offset(150, 200) & const Size(200, 200), 4, 1, false, paint);
+    // canvas.drawArc(
+    //     const Offset(150, 200) & const Size(200, 200), 6, 1, false, paint);
 
     //TO MAKE A CIRCLE USING PATH
     // var path = Path();
-    // path.addOval(Rect.fromCircle(center: center, radius: 100));
+    // path.moveTo(250, 250);
+    // path.addOval(Rect.fromCircle(center: center, radius: 10));
     // canvas.drawPath(path, paint);
 
     //TO DRAW A SQUARE or any other shapes

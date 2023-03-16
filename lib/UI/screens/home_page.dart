@@ -30,6 +30,10 @@ class HomePage extends StatelessWidget {
                     onPressed: () => Modular.to.pushNamed('/second'),
                   ),
                   CustomCard(
+                    title: 'Custom Paint 2',
+                    onPressed: () => Modular.to.pushNamed('/cp'),
+                  ),
+                  CustomCard(
                     title: 'Shimmer Effect',
                     onPressed: () => Modular.to.pushNamed('/third'),
                   ),
@@ -49,8 +53,8 @@ class HomePage extends StatelessWidget {
                     title: 'Date Range',
                     onPressed: () => Modular.to.pushNamed('/dateRange'),
                   ),
-                  // CustomCard(title: 'Todo 6'),
-                  // CustomCard(title: 'Todo 9'),
+                  CustomCard(title: 'Todo 6'),
+                  CustomCard(title: 'Todo 9'),
                   // CustomCard(title: 'Todo 8'),
                   // CustomCard(title: 'Todo 7'),
                   // CustomCard(title: 'Todo 3'),
