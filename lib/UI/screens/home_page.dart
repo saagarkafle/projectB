@@ -53,8 +53,11 @@ class HomePage extends StatelessWidget {
                     title: 'Date Range',
                     onPressed: () => Modular.to.pushNamed('/dateRange'),
                   ),
-                  CustomCard(title: 'Todo 6'),
-                  CustomCard(title: 'Todo 9'),
+                  CustomCard(
+                    title: 'Music Player',
+                    onPressed: () => Modular.to.pushNamed('/musicPlayer'),
+                  ),
+                  CustomCard(title: 'Todo '),
                   // CustomCard(title: 'Todo 8'),
                   // CustomCard(title: 'Todo 7'),
                   // CustomCard(title: 'Todo 3'),

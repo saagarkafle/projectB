@@ -4,6 +4,7 @@ import 'package:whatsapp/UI/screens/date_range_page.dart';
 import 'UI/screens/animated_icon.dart';
 import 'UI/screens/cp2page.dart';
 import 'UI/screens/home_page.dart';
+import 'UI/screens/music_player/music_home.dart';
 import 'UI/screens/photos_page.dart';
 import 'UI/screens/shimmer_page.dart';
 import 'UI/screens/custom_paint.dart';
@@ -59,6 +60,12 @@ class AppModule extends Module {
         ChildRoute(
           '/cp',
           child: (context, args) => const CustomPaintPage2(),
+          transition: TransitionType.fadeIn,
+          duration: const Duration(milliseconds: 600),
+        ),
+        ChildRoute(
+          '/musicPlayer',
+          child: (context, args) => const AllSongs(),
           transition: TransitionType.fadeIn,
           duration: const Duration(milliseconds: 600),
         ),
