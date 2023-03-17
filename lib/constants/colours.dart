@@ -10,7 +10,7 @@ class AppColors {
   static Color whiteColor = const Color(0xffFFFFFF);
   static Color blackColor = const Color(0xff000000);
   static Color subTitleColor = const Color(0xff8E8E93);
-  static Color textFieldColor = const Color(0xffF3F3F3);
+  static Color bgColor = const Color(0xffF3F3F3);
   static Color primaryColor = const Color(0xffF6F866);
   static Color fieldsTextColor = const Color(0xff9E9E9E);
   static Color fieldsTitleColor = const Color(0xff505050);

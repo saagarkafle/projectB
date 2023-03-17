@@ -3,57 +3,28 @@ import 'package:flutter/material.dart';
 class MoonPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint();
-    final path = Path();
-    paint.style = PaintingStyle.stroke;
-    paint.strokeWidth = 4;
-    paint.color = Colors.orange;
-    path.moveTo(0, size.height * 0.9);
-    path.quadraticBezierTo(
+    final moonPaint = Paint();
+    final moonPath = Path();
+    moonPaint.style = PaintingStyle.stroke;
+    moonPaint.strokeWidth = 4;
+    // moonPaint.color = const Color.fromARGB(77, 0, 8, 248);
+    moonPath.moveTo(0, size.height * 0.8);
+    moonPath.quadraticBezierTo(
       size.width * 0.1,
-      size.height * 0.8,
+      size.height * 0.7,
       size.width * 0.2,
-      size.height * 0.9,
+      size.height * 0.8,
     );
-    path.quadraticBezierTo(
+    moonPath.quadraticBezierTo(
       size.width * 0.1,
-      size.height * 0.85,
+      size.height * 0.75,
       size.width * 0.01,
-      size.height * 0.9,
+      size.height * 0.8,
     );
-    // path.quadraticBezierTo(
-    //   size.width * 0.1,
-    //   size.height * 0.8,
-    //   size.width * 0.1,
-    //   size.height * 0.8,
-    // );
-    // path.quadraticBezierTo(
-    //   size.width * 0.5,
-    //   size.height * 0.8,
-    //   size.width * 0.6,
-    //   size.height * 0.9,
-    // );
-    // path.quadraticBezierTo(
-    //   size.width * 0.7,
-    //   size.height * 1,
-    //   size.width * 0.8,
-    //   size.height * 0.9,
-    // );
-    // path.quadraticBezierTo(
-    //   size.width * 0.9,
-    //   size.height * 0.8,
-    //   size.width * 1,
-    //   size.height * 0.9,
-    // );
-
-    // path.lineTo(size.width, size.height);
-    // path.lineTo(0, size.height);
-    // path.lineTo(0, size.height * 0.897);
-    // canvas.drawPath(path, paint);
     final paint1 = Paint();
     paint1.style = PaintingStyle.fill;
-    paint1.color = Colors.green;
-    canvas.drawPath(path, paint1);
+    paint1.color = const Color.fromARGB(77, 0, 8, 248);
+    canvas.drawPath(moonPath, paint1);
   }
 
   @override

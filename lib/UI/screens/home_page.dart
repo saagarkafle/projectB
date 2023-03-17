@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.bgGreyColor,
+      backgroundColor: AppColors.bgColor,
       appBar: AppBar(title: const Text('Home Page...')),
       body: SingleChildScrollView(
         child: Column(
@@ -30,34 +30,30 @@ class HomePage extends StatelessWidget {
                   //   onPressed: () => Modular.to.pushNamed('/second'),
                   // ),
                   CustomCard(
-                    title: 'Custom Paint 2',
-                    onPressed: () => Modular.to.pushNamed('/cp'),
-                  ),
+                      title: 'Test',
+                      onPressed: () => Modular.to.pushNamed('/test')),
                   CustomCard(
-                    title: 'Shimmer Effect',
-                    onPressed: () => Modular.to.pushNamed('/third'),
-                  ),
+                      title: 'Custom Painter',
+                      onPressed: () => Modular.to.pushNamed('/cp')),
                   CustomCard(
-                    title: 'Photos',
-                    onPressed: () => Modular.to.pushNamed('/photos'),
-                  ),
+                      title: 'Shimmer Effect',
+                      onPressed: () => Modular.to.pushNamed('/third')),
                   CustomCard(
-                    title: 'Tween Animation',
-                    onPressed: () => Modular.to.pushNamed('/tween'),
-                  ),
+                      title: 'Photos',
+                      onPressed: () => Modular.to.pushNamed('/photos')),
                   CustomCard(
-                    title: 'Animated Icon',
-                    onPressed: () => Modular.to.pushNamed('/animatedicon'),
-                  ),
+                      title: 'Tween Animation',
+                      onPressed: () => Modular.to.pushNamed('/tween')),
                   CustomCard(
-                    title: 'Date Range',
-                    onPressed: () => Modular.to.pushNamed('/dateRange'),
-                  ),
+                      title: 'Animated Icon',
+                      onPressed: () => Modular.to.pushNamed('/animatedicon')),
                   CustomCard(
-                    title: 'Music Player',
-                    onPressed: () => Modular.to.pushNamed('/musicPlayer'),
-                  ),
-                  CustomCard(title: 'Todo '),
+                      title: 'Date Range',
+                      onPressed: () => Modular.to.pushNamed('/dateRange')),
+                  CustomCard(
+                      title: 'Music Player',
+                      onPressed: () => Modular.to.pushNamed('/musicPlayer')),
+                  // CustomCard(title: 'Todo '),
                   // CustomCard(title: 'Todo 8'),
                   // CustomCard(title: 'Todo 7'),
                   // CustomCard(title: 'Todo 3'),

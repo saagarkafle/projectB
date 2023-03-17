@@ -20,14 +20,14 @@ class CustomCard extends StatelessWidget {
       onTap: onPressed,
       child: Card(
         elevation: 15,
-        color: AppColors.textFieldColor,
+        color: AppColors.whiteColor,
         shadowColor: AppColors.darkBlue,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(16),
-            // topRight: Radius.circular(6),
+            topRight: Radius.circular(6),
             bottomRight: Radius.circular(16),
-            // bottomLeft: Radius.circular(6),
+            bottomLeft: Radius.circular(6),
           ),
         ),
         child: Padding(

@@ -240,7 +240,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
               width: 1,
             ),
           ),
-          fillColor: widget.fillColor ?? AppColors.textFieldColor,
+          fillColor: widget.fillColor ?? AppColors.bgColor,
           filled: true,
         ),
       ),

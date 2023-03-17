@@ -8,6 +8,7 @@ import 'UI/screens/music_player/music_home.dart';
 import 'UI/screens/photos_page.dart';
 import 'UI/screens/shimmer_page.dart';
 import 'UI/screens/custom_paint.dart';
+import 'UI/screens/test_page.dart';
 import 'UI/screens/tween_page.dart';
 
 class AppModule extends Module {
@@ -66,6 +67,12 @@ class AppModule extends Module {
         ChildRoute(
           '/musicPlayer',
           child: (context, args) => const AllSongs(),
+          transition: TransitionType.fadeIn,
+          duration: const Duration(milliseconds: 600),
+        ),
+        ChildRoute(
+          '/test',
+          child: (context, args) => const TestPage(),
           transition: TransitionType.fadeIn,
           duration: const Duration(milliseconds: 600),
         ),
