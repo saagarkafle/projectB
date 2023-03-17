@@ -19,12 +19,6 @@ class WavePainterBg extends CustomPainter {
       ..style = PaintingStyle.fill
       ..strokeCap = StrokeCap.round;
 
-    var paints = Paint()
-      ..color = Colors.black
-      ..strokeWidth = 5
-      ..style = PaintingStyle.stroke
-      ..strokeCap = StrokeCap.round;
-
     Offset center = Offset(size.width * 0.302, size.height * (1 - length));
     canvas.drawCircle(center, 30, paint);
     log(center.toString());

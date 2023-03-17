@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../widgets/wp2.dart';
+import '../widgets/cp2.dart';
 
 class CustomPaintPage extends StatelessWidget {
   const CustomPaintPage({super.key});
@@ -16,7 +16,7 @@ class CustomPaintPage extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         child: CustomPaint(
-          painter: MoonPainter(),
+          painter: ShapePainter(),
         ),
       ),
     );

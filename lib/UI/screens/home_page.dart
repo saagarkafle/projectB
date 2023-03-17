@@ -25,10 +25,10 @@ class HomePage extends StatelessWidget {
                 runSpacing: 10.h,
                 crossAxisAlignment: WrapCrossAlignment.start,
                 children: [
-                  CustomCard(
-                    title: 'Custom Paint',
-                    onPressed: () => Modular.to.pushNamed('/second'),
-                  ),
+                  // CustomCard(
+                  //   title: 'Custom Paint',
+                  //   onPressed: () => Modular.to.pushNamed('/second'),
+                  // ),
                   CustomCard(
                     title: 'Custom Paint 2',
                     onPressed: () => Modular.to.pushNamed('/cp'),

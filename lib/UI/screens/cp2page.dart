@@ -3,8 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 
 import '../../constants/colours.dart';
-import '../widgets/wp.dart';
-import '../widgets/wp1.dart';
+import '../widgets/sun_widget.dart';
+import '../widgets/wave_widget.dart';
 
 class CustomPaintPage2 extends StatefulWidget {
   const CustomPaintPage2({super.key});
