@@ -13,6 +13,7 @@ class MoonPainter extends CustomPainter {
     final moonPath = Path();
     moonPaint.style = PaintingStyle.stroke;
     moonPaint.strokeWidth = 4;
+
     // moonPaint.color = const Color.fromARGB(77, 0, 8, 248);
     moonPath.moveTo(size.width * 0.2, size.height * (1 - moonHeight + 0.8));
     moonPath.quadraticBezierTo(

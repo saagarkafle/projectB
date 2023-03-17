@@ -29,9 +29,9 @@ class HomePage extends StatelessWidget {
                   //   title: 'Custom Paint',
                   //   onPressed: () => Modular.to.pushNamed('/second'),
                   // ),
-                  CustomCard(
-                      title: 'Test',
-                      onPressed: () => Modular.to.pushNamed('/test')),
+                  // CustomCard(
+                  //     title: 'Test',
+                  //     onPressed: () => Modular.to.pushNamed('/test')),
                   CustomCard(
                       title: 'Custom Painter',
                       onPressed: () => Modular.to.pushNamed('/cp')),
@@ -53,6 +53,12 @@ class HomePage extends StatelessWidget {
                   CustomCard(
                       title: 'Music Player',
                       onPressed: () => Modular.to.pushNamed('/musicPlayer')),
+                  CustomCard(
+                      title: 'Hero',
+                      onPressed: () => Modular.to.pushNamed('/hero')),
+                  CustomCard(
+                      title: 'Stretchy header',
+                      onPressed: () => Modular.to.pushNamed('/stretchyHeader')),
                   // CustomCard(title: 'Todo '),
                   // CustomCard(title: 'Todo 8'),
                   // CustomCard(title: 'Todo 7'),
