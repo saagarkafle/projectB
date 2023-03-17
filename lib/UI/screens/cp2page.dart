@@ -21,9 +21,10 @@ class _CustomPaintPage2State extends State<CustomPaintPage2>
   late Animation<double> _moonAnimation;
   late Animation sunColorAnimation;
   late Animation darkColorAnimation;
+  late Animation lightColorAnimation;
   late AnimationController sunAnimationController;
   late AnimationController darkAnimationController;
-  late AnimationController moonAnimation;
+  late AnimationController moonAnimationController;
 
   @override
   void initState() {
@@ -37,9 +38,11 @@ class _CustomPaintPage2State extends State<CustomPaintPage2>
             .animate(sunAnimationController);
     darkColorAnimation = ColorTween(begin: Colors.grey, end: Colors.black)
         .animate(darkAnimationController);
+    lightColorAnimation = ColorTween(begin: Colors.black, end: Colors.grey)
+        .animate(darkAnimationController);
     _sunMoveAnimationController = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 3000));
-    moonAnimation = AnimationController(
+    moonAnimationController = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 3000));
     _sunMoveAnimation = Tween<double>(begin: 0.0, end: 1.05)
         .animate(_sunMoveAnimationController)
@@ -47,18 +50,37 @@ class _CustomPaintPage2State extends State<CustomPaintPage2>
         log(sunAnimationController.value.toString(), name: 'oooo');
         setState(() {});
       });
+    _moonAnimation =
+        Tween<double>(begin: 0.9, end: 1.8).animate(moonAnimationController)
+          ..addListener(() {
+            setState(() {});
+          });
 
     sunAnimationController
         .forward()
         .then((value) => darkAnimationController.forward());
+
     _sunMoveAnimationController.addStatusListener((status) {
       if (_sunMoveAnimationController.isCompleted) {
-        _moonAnimation =
-            Tween<double>(begin: 0.0, end: 1.05).animate(moonAnimation)
-              ..addListener(() {
-                setState(() {});
-              });
-        moonAnimation.forward();
+        moonAnimationController.reset();
+        moonAnimationController.forward();
+      }
+    });
+    moonAnimationController.addStatusListener((status) {
+      if (moonAnimationController.isCompleted) {
+        _sunMoveAnimation = Tween<double>(begin: 0.0, end: 1.05)
+            .animate(_sunMoveAnimationController)
+          ..addListener(() {
+            log(sunAnimationController.value.toString(), name: 'oooo');
+            setState(() {});
+          });
+        darkAnimationController.reset();
+        sunAnimationController.reset();
+        sunAnimationController
+            .forward()
+            .then((value) => darkAnimationController.forward());
+        _sunMoveAnimationController.reset();
+        _sunMoveAnimationController.forward();
       }
     });
     _sunMoveAnimationController.forward();
@@ -85,7 +107,9 @@ class _CustomPaintPage2State extends State<CustomPaintPage2>
       ),
       body: (_sunMoveAnimationController.isCompleted)
           ? CustomPaint(
-              painter: MoonPainter(),
+              painter: MoonPainter(
+                  moonHeight:
+                      _moonAnimation.value != 1.8 ? _moonAnimation.value : 0.9),
               foregroundPainter: WavePainter(),
               child: Container(),
             )

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp/UI/widgets/moon_widget.dart';
 
 class TestPage extends StatefulWidget {
   const TestPage({super.key});
@@ -16,8 +15,8 @@ class _TestPageState extends State<TestPage> {
         title: const Text('Custom Painter 2'),
       ),
       body: Container(
-        child: CustomPaint(painter: MoonPainter()),
-      ),
+          // child: CustomPaint(painter: MoonPainter()),
+          ),
     );
   }
 }
