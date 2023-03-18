@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:whatsapp/UI/screens/date_range_page.dart';
 import 'package:whatsapp/UI/screens/hero_second.dart';
 import 'package:whatsapp/UI/screens/nav_bar/nav_bar.dart';
@@ -9,6 +10,7 @@ import 'UI/screens/cp2page.dart';
 import 'UI/screens/hero_animation.dart';
 import 'UI/screens/home_page.dart';
 import 'UI/screens/loading.dart';
+import 'UI/screens/maps.dart';
 import 'UI/screens/music_player/music_home.dart';
 import 'UI/screens/photos_page.dart';
 import 'UI/screens/shimmer_page.dart';
@@ -89,6 +91,10 @@ class AppModule extends Module {
             duration: const Duration(milliseconds: 600)),
         ChildRoute('/flip',
             child: (context, args) => const FlipY(),
+            transition: TransitionType.fadeIn,
+            duration: const Duration(milliseconds: 600)),
+        ChildRoute('/maps',
+            child: (context, args) => const LocationTracker(),
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
       ];

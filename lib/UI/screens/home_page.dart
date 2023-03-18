@@ -77,6 +77,9 @@ class HomePage extends StatelessWidget {
                     CustomCard(
                         title: 'Flip Card',
                         onPressed: () => Modular.to.pushNamed('/flip')),
+                    CustomCard(
+                        title: 'Location Tracker',
+                        onPressed: () => Modular.to.pushNamed('/maps')),
                   ],
                 ),
               ),
