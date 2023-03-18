@@ -75,7 +75,7 @@ class HomePage extends StatelessWidget {
                         title: 'Loading',
                         onPressed: () => Modular.to.pushNamed('/loading')),
                     CustomCard(
-                        title: 'Transform',
+                        title: 'Flip Card',
                         onPressed: () => Modular.to.pushNamed('/flip')),
                   ],
                 ),

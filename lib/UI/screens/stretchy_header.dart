@@ -19,8 +19,8 @@ class _StretchyHeaderState extends State<StretchyHeader> {
         slivers: [
           SliverAppBar(
             pinned: true,
-
-            // backgroundColor: Colors.orangeAccent,
+            excludeHeaderSemantics:
+                true, // backgroundColor: Colors.orangeAccent,
             expandedHeight: 350,
             stretchTriggerOffset: 200,
             stretch: true,
@@ -28,7 +28,7 @@ class _StretchyHeaderState extends State<StretchyHeader> {
               stretchModes: const [
                 StretchMode.zoomBackground,
                 StretchMode.fadeTitle,
-                StretchMode.blurBackground,
+                // StretchMode.blurBackground,
               ],
               title: const Text('This is Pokhara'),
               centerTitle: true,

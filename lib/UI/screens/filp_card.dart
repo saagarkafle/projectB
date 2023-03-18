@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+import '../widgets/flip_card.dart';
+
 class FlipY extends StatefulWidget {
   const FlipY({super.key});
 
@@ -40,110 +42,25 @@ class _FlipYState extends State<FlipY> with SingleTickerProviderStateMixin {
             spacing: 80,
             runSpacing: 80,
             children: [
-              Transform(
-                alignment: Alignment.center,
+              FlipCard(
                 transform: Matrix4.identity()..rotateY(((_animation.value))),
-                child: Container(
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black.withOpacity(0.5),
-                              spreadRadius: 5,
-                              blurRadius: 7,
-                              offset: const Offset(0, 3))
-                        ])),
+                borderWidth: 4,
               ),
-              Transform(
-                alignment: Alignment.center,
+              FlipCard(
                 transform: Matrix4.identity()..rotateY(((-_animation.value))),
-                child: Container(
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black.withOpacity(0.5),
-                              spreadRadius: 5,
-                              blurRadius: 7,
-                              offset: const Offset(0, 3))
-                        ])),
               ),
-              Transform(
-                alignment: Alignment.center,
+              FlipCard(
                 transform: Matrix4.identity()..rotateZ(((_animation.value))),
-                child: Container(
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black.withOpacity(0.5),
-                              spreadRadius: 5,
-                              blurRadius: 7,
-                              offset: const Offset(0, 3))
-                        ])),
               ),
-              Transform(
-                alignment: Alignment.center,
+              FlipCard(
                 transform: Matrix4.identity()..rotateZ(((-_animation.value))),
-                child: Container(
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black.withOpacity(0.5),
-                              spreadRadius: 5,
-                              blurRadius: 7,
-                              offset: const Offset(0, 3))
-                        ])),
               ),
-              Transform(
-                alignment: Alignment.center,
+              FlipCard(
                 transform: Matrix4.identity()..rotateX(((_animation.value))),
-                child: Container(
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black.withOpacity(0.5),
-                              spreadRadius: 5,
-                              blurRadius: 7,
-                              offset: const Offset(0, 3))
-                        ]),
-                    child: const Text('data')),
               ),
-              Transform(
-                alignment: Alignment.center,
+              FlipCard(
                 transform: Matrix4.identity()
                   ..rotateX(((_animation.value * -1))),
-                child: Container(
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black.withOpacity(0.5),
-                              spreadRadius: 5,
-                              blurRadius: 7,
-                              offset: const Offset(0, 3))
-                        ]),
-                    child: const Text('data')),
               ),
             ],
           );
