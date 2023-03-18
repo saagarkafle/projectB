@@ -15,6 +15,7 @@ import 'UI/screens/shimmer_page.dart';
 import 'UI/screens/custom_paint.dart';
 import 'UI/screens/stretchy_header.dart';
 import 'UI/screens/test_page.dart';
+import 'UI/screens/filp_card.dart';
 import 'UI/screens/tween_page.dart';
 
 class AppModule extends Module {
@@ -84,6 +85,10 @@ class AppModule extends Module {
             duration: const Duration(milliseconds: 600)),
         ChildRoute('/loading',
             child: (context, args) => const LoadingPage(),
+            transition: TransitionType.fadeIn,
+            duration: const Duration(milliseconds: 600)),
+        ChildRoute('/flip',
+            child: (context, args) => const FlipY(),
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
       ];

@@ -26,6 +26,7 @@ class HomePage extends StatelessWidget {
                 child: Wrap(
                   alignment: WrapAlignment.center,
                   spacing: 10.w,
+                  runAlignment: WrapAlignment.start,
                   runSpacing: 10.h,
                   crossAxisAlignment: WrapCrossAlignment.start,
                   children: [
@@ -73,6 +74,9 @@ class HomePage extends StatelessWidget {
                     CustomCard(
                         title: 'Loading',
                         onPressed: () => Modular.to.pushNamed('/loading')),
+                    CustomCard(
+                        title: 'Transform',
+                        onPressed: () => Modular.to.pushNamed('/flip')),
                   ],
                 ),
               ),
