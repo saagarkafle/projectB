@@ -39,6 +39,7 @@ dependencies:
   shimmer: ^2.0.0
   on_audio_query: ^2.6.2
   just_audio: ^0.9.31
+  accordion: ^2.5.1
 
 dev_dependencies:
   # The "flutter_lints" package below contains a set of recommended lints to
