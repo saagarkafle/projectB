@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../../constants/colours.dart';
 import '../../constants/screen_util.dart';
-import 'loading.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -45,12 +45,21 @@ class StartState extends State<SplashScreen> {
           ),
         ),
         Positioned(
-            top: SizeConfig.screenHeight / 1.3,
-            left: SizeConfig.screenWidth / 2.15,
-            child: const SizedBox(
-              height: 120,
-              child: LoadingPage(),
-            ))
+          top: SizeConfig.screenHeight / 1.3,
+          left: SizeConfig.screenWidth / 2.15,
+          child: CircularProgressIndicator(
+            backgroundColor: AppColors.blackColor,
+            strokeWidth: 2,
+            color: AppColors.whiteColor,
+          ),
+        )
+        // Positioned(
+        //     top: SizeConfig.screenHeight / 1.3,
+        //     left: SizeConfig.screenWidth / 2.7,
+        //     child: const SizedBox(
+        //       height: 120,
+        //       child: LoadingPage(),
+        //     ))
       ],
     );
   }

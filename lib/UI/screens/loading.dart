@@ -18,10 +18,10 @@ class _LoadingPageState extends State<LoadingPage>
   void initState() {
     super.initState();
     _animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 5000));
+        vsync: this, duration: const Duration(milliseconds: 4000));
 
     _animation =
-        Tween<double>(begin: 0, end: 100).animate(_animationController!)
+        Tween<double>(begin: 0, end: 145).animate(_animationController!)
           ..addListener(() {
             setState(() {});
           });
@@ -56,19 +56,30 @@ class Loading extends CustomPainter {
   Loading(this.value);
   @override
   void paint(Canvas canvas, Size size) {
-    Paint arc = Paint()
-      ..strokeWidth = 20
-      ..color = Colors.red
-      ..style = PaintingStyle.stroke
-      ..strokeCap = StrokeCap.round;
     Offset center = Offset(size.width / 2, size.height / 2);
 
-    double angle = 2 * pi * (value / 100);
     double radius = 50;
+
+    Paint arc = Paint()
+      ..strokeWidth = 20
+      ..shader = const LinearGradient(
+        colors: [
+          Color(0xff1C1A28),
+          Color(0xff920923),
+        ],
+      ).createShader(Rect.fromCircle(
+        center: center,
+        radius: radius,
+      ))
+      ..color = const Color(0xff920923)
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round;
+
+    double angle = 2 * pi * (value / 100);
 
     Paint circle = Paint()
       ..strokeWidth = 15
-      ..color = Colors.black
+      ..color = const Color(0xff1C1A28)
       ..style = PaintingStyle.stroke;
 
     // Offset center = Offset(size.width / 2, size.height / 2);

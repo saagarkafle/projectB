@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp/constants/colours.dart';
 import 'package:whatsapp/constants/screen_util.dart';
+
+import 'loading.dart';
 
 class TestPage extends StatefulWidget {
   const TestPage({super.key});
@@ -22,14 +23,12 @@ class _TestPageState extends State<TestPage> {
           ),
         ),
         Positioned(
-          top: SizeConfig.screenHeight / 1.3,
-          left: SizeConfig.screenWidth / 2.15,
-          child: CircularProgressIndicator(
-            backgroundColor: AppColors.blackColor,
-            strokeWidth: 2,
-            color: AppColors.whiteColor,
-          ),
-        )
+            top: SizeConfig.screenHeight / 1.3,
+            left: SizeConfig.screenWidth / 2.7,
+            child: const SizedBox(
+              height: 120,
+              child: LoadingPage(),
+            ))
       ],
     );
   }
