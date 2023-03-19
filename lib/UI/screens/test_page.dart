@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/constants/colours.dart';
+import 'package:whatsapp/constants/screen_util.dart';
 
 class TestPage extends StatefulWidget {
   const TestPage({super.key});
@@ -10,13 +12,25 @@ class TestPage extends StatefulWidget {
 class _TestPageState extends State<TestPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Custom Painter 2'),
-      ),
-      body: Container(
-          // child: CustomPaint(painter: MoonPainter()),
+    return Stack(
+      children: <Widget>[
+        Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/images/splash.jpg'),
+                fit: BoxFit.cover),
           ),
+        ),
+        Positioned(
+          top: SizeConfig.screenHeight / 1.3,
+          left: SizeConfig.screenWidth / 2.15,
+          child: CircularProgressIndicator(
+            backgroundColor: AppColors.blackColor,
+            strokeWidth: 2,
+            color: AppColors.whiteColor,
+          ),
+        )
+      ],
     );
   }
 }

@@ -18,7 +18,7 @@ class _LoadingPageState extends State<LoadingPage>
   void initState() {
     super.initState();
     _animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 3000));
+        vsync: this, duration: const Duration(milliseconds: 5000));
 
     _animation =
         Tween<double>(begin: 0, end: 100).animate(_animationController!)
@@ -36,14 +36,15 @@ class _LoadingPageState extends State<LoadingPage>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Loading page')),
-      body: Center(
+    return SizedBox(
+      height: 120,
+      width: 120,
+      child: Center(
         child: CustomPaint(
           foregroundPainter: Loading(_animation!.value),
-          child: Center(
-            child: Text(_animation!.value.toInt().toString()),
-          ),
+          // child: Center(
+          //   child: Text(_animation!.value.toInt().toString()),
+          // ),
         ),
       ),
     );

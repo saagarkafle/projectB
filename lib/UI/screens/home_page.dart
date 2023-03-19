@@ -34,18 +34,15 @@ class HomePage extends StatelessWidget {
                     //   title: 'Custom Paint',
                     //   onPressed: () => Modular.to.pushNamed('/second'),
                     // ),
-                    // CustomCard(
-                    //     title: 'Test',
-                    //     onPressed: () => Modular.to.pushNamed('/test')),
+                    CustomCard(
+                        title: 'Test',
+                        onPressed: () => Modular.to.pushNamed('/test')),
                     CustomCard(
                         title: 'Custom Painter',
                         onPressed: () => Modular.to.pushNamed('/cp')),
                     CustomCard(
                         title: 'Shimmer Effect',
                         onPressed: () => Modular.to.pushNamed('/third')),
-                    CustomCard(
-                        title: 'Photos',
-                        onPressed: () => Modular.to.pushNamed('/photos')),
                     CustomCard(
                         title: 'Tween Animation',
                         onPressed: () => Modular.to.pushNamed('/tween')),
@@ -80,6 +77,9 @@ class HomePage extends StatelessWidget {
                     CustomCard(
                         title: 'Location Tracker',
                         onPressed: () => Modular.to.pushNamed('/maps')),
+                    CustomCard(
+                        title: 'Calculator',
+                        onPressed: () => Modular.to.pushNamed('/calculator')),
                   ],
                 ),
               ),

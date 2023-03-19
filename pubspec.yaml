@@ -42,11 +42,17 @@ dependencies:
   just_audio: ^0.9.31
   on_audio_query: ^2.6.2
   shimmer: ^2.0.0
+  flutter_awesome_calculator: ^1.0.0+1
 
 dev_dependencies:
   flutter_lints: ^2.0.0
+  flutter_launcher_icons: ^0.12.0
   flutter_test:
     sdk: flutter
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/1024.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
