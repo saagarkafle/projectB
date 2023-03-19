@@ -80,6 +80,9 @@ class HomePage extends StatelessWidget {
                     CustomCard(
                         title: 'Calculator',
                         onPressed: () => Modular.to.pushNamed('/calculator')),
+                    CustomCard(
+                        title: 'Counter',
+                        onPressed: () => Modular.to.pushNamed('/counter')),
                   ],
                 ),
               ),

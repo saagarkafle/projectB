@@ -32,16 +32,23 @@ class ActionButton extends StatelessWidget {
       child: Container(
         // duration: const Duration(milliseconds: 300),
         alignment: Alignment.center,
+        padding: const EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(btnCurve),
-          color: btnColor ?? AppColors.mainColor,
+          border: Border.all(color: AppColors.blackColor),
+          borderRadius: BorderRadius.all(
+            Radius.circular(btnCurve),
+          ),
         ),
+        // decoration: BoxDecoration(
+        //   borderRadius: BorderRadius.circular(btnCurve),
+        //   color: btnColor ?? AppColors.mainColor,
+        // ),
         height: btnHeight,
         width: btnWidth ?? SizeConfig.screenWidth,
         child: Text(
           btnName,
           style: TextStyle(
-              color: txtColor ?? AppColors.whiteColor,
+              color: txtColor ?? AppColors.mainColor,
               fontSize: txtFontSize,
               fontWeight: FontWeight.w500),
         ),

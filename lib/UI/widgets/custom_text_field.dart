@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../constants/const.dart';
 import '../../constants/colours.dart';
+import '../../constants/const.dart';
 
 class CustomTextField extends StatefulWidget {
   final String? labelText;
@@ -36,6 +36,7 @@ class CustomTextField extends StatefulWidget {
   final Iterable<String>? autoFillHints;
   final bool autofocus;
   final bool centerText;
+  final double btnCurve;
   final bool isNumber;
   final Color? hintColor;
   final AutovalidateMode? autovalidateMode;
@@ -81,6 +82,7 @@ class CustomTextField extends StatefulWidget {
     this.autovalidateMode,
     this.maxLines,
     this.minLines,
+    required this.btnCurve,
   }) : super(key: key);
 
   @override
@@ -91,7 +93,14 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(4.0)),
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      decoration: BoxDecoration(
+        border: Border.all(color: AppColors.borderColor),
+        borderRadius: BorderRadius.all(
+          Radius.circular(widget.btnCurve),
+        ),
+      ),
+      // decoration: BoxDecoration(borderRadius: BorderRadius.circular(4.0)),
       child: TextFormField(
         minLines: widget.minLines ?? 1,
         maxLines: widget.maxLines ?? 1,
@@ -240,8 +249,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
               width: 1,
             ),
           ),
-          fillColor: widget.fillColor ?? AppColors.bgColor,
-          filled: true,
+          // fillColor: widget.fillColor ?? AppColors.bgColor,
+          // filled: true,
         ),
       ),
     );
