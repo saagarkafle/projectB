@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import '../widgets/flip_card.dart';
+import 'widgets/flip_card.dart';
 
 class FlipY extends StatefulWidget {
   const FlipY({super.key});

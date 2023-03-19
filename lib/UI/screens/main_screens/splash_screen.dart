@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import '../../constants/colours.dart';
-import '../../constants/screen_util.dart';
+import '../../../constants/colours.dart';
+import '../../../constants/screen_util.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

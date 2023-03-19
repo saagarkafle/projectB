@@ -3,7 +3,7 @@ import 'package:whatsapp/constants/colours.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../widgets/custom_card.dart';
+import 'widgets/custom_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -75,7 +75,7 @@ class HomePage extends StatelessWidget {
                         title: 'Flip Card',
                         onPressed: () => Modular.to.pushNamed('/flip')),
                     CustomCard(
-                        title: 'Location Tracker',
+                        title: 'My Maps',
                         onPressed: () => Modular.to.pushNamed('/maps')),
                     CustomCard(
                         title: 'Calculator',

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../constants/colours.dart';
+import '../../../../constants/colours.dart';
 
 // ignore: must_be_immutable
 class CustomCard extends StatelessWidget {

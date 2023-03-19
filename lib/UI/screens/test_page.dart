@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/constants/screen_util.dart';
 
-import 'loading.dart';
+import 'animation_screens/loading.dart';
 
 class TestPage extends StatefulWidget {
   const TestPage({super.key});

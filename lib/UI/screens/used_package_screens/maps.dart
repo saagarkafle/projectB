@@ -66,18 +66,22 @@ class _LocationTrackerState extends State<LocationTracker> {
         title: const Text('Maps'),
       ),
       body: GoogleMap(
+        // mapToolbarEnabled: true,
+
+        compassEnabled: true,
         initialCameraPosition: CameraPosition(target: currentLatLang, zoom: 6),
-        mapType: MapType.normal,
+        mapType: MapType.terrain,
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
         },
         markers: <Marker>{
           Marker(
-              draggable: true,
-              markerId: const MarkerId("1"),
-              position: currentLatLang,
-              icon: BitmapDescriptor.defaultMarker,
-              infoWindow: const InfoWindow(title: 'My location')),
+            draggable: true,
+            markerId: const MarkerId("1"),
+            position: currentLatLang,
+            icon: BitmapDescriptor.defaultMarker,
+            infoWindow: const InfoWindow(title: 'My location'),
+          ),
         },
       ),
       floatingActionButton: FloatingActionButton(
@@ -90,8 +94,13 @@ class _LocationTrackerState extends State<LocationTracker> {
   Future<void> _goToCurrentLocation() async {
     await _determinePosition();
     final GoogleMapController controller = await _controller.future;
-    controller.animateCamera(CameraUpdate.newCameraPosition(
-      CameraPosition(target: currentLatLang, zoom: 15),
-    ));
+    controller.animateCamera(
+      CameraUpdate.newCameraPosition(
+        CameraPosition(
+          target: currentLatLang,
+          zoom: 15,
+        ),
+      ),
+    );
   }
 }

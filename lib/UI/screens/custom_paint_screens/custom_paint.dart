@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../widgets/cp2.dart';
+import 'widgets/cp2.dart';
 
 class CustomPaintPage extends StatelessWidget {
   const CustomPaintPage({super.key});

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:whatsapp/constants/colours.dart';
 
-import '../widgets/shimmer_widget.dart';
+import 'widgets/shimmer_widget.dart';
 
 class ThirdPage extends StatelessWidget {
   const ThirdPage({super.key});

@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:on_audio_query/on_audio_query.dart';
-import 'package:whatsapp/UI/widgets/shimmer_widget.dart';
+import 'package:whatsapp/UI/screens/used_package_screens/widgets/shimmer_widget.dart';
 
 class AllSongs extends StatefulWidget {
   const AllSongs({Key? key}) : super(key: key);

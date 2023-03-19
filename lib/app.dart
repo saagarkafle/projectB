@@ -1,24 +1,24 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:whatsapp/UI/screens/date_range_page.dart';
-import 'package:whatsapp/UI/screens/hero_second.dart';
-import 'package:whatsapp/UI/screens/home_page.dart';
+import 'package:whatsapp/UI/screens/animation_screens/hero_second.dart';
+import 'package:whatsapp/UI/screens/main_screens/home_page.dart';
 import 'package:whatsapp/UI/screens/nav_bar/nav_bar.dart';
 
-import 'UI/screens/accordian.dart';
-import 'UI/screens/animated_icon.dart';
-import 'UI/screens/calculator.dart';
-import 'UI/screens/cp2page.dart';
-import 'UI/screens/hero_animation.dart';
-import 'UI/screens/loading.dart';
-import 'UI/screens/maps.dart';
+import 'UI/screens/used_package_screens/accordian.dart';
+import 'UI/screens/animation_screens/animated_icon.dart';
+import 'UI/screens/used_package_screens/calculator.dart';
+import 'UI/screens/custom_paint_screens/cp2page.dart';
+import 'UI/screens/animation_screens/hero_animation.dart';
+import 'UI/screens/animation_screens/loading.dart';
+import 'UI/screens/used_package_screens/maps.dart';
 import 'UI/screens/music_player/music_home.dart';
-import 'UI/screens/shimmer_page.dart';
-import 'UI/screens/custom_paint.dart';
-import 'UI/screens/splash_screen.dart';
+import 'UI/screens/used_package_screens/shimmer_page.dart';
+import 'UI/screens/custom_paint_screens/custom_paint.dart';
+import 'UI/screens/main_screens/splash_screen.dart';
 import 'UI/screens/stretchy_header.dart';
 import 'UI/screens/test_page.dart';
-import 'UI/screens/filp_card.dart';
-import 'UI/screens/tween_page.dart';
+import 'UI/screens/animation_screens/filp_card_screen.dart';
+import 'UI/screens/animation_screens/tween_page.dart';
 
 class AppModule extends Module {
   // @override

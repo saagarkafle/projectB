@@ -1,11 +1,11 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:whatsapp/UI/widgets/moon_widget.dart';
+import 'package:whatsapp/UI/screens/custom_paint_screens/widgets/moon_widget.dart';
 
-import '../../constants/colours.dart';
-import '../widgets/sun_widget.dart';
-import '../widgets/wave_widget.dart';
+import '../../../constants/colours.dart';
+import 'widgets/sun_widget.dart';
+import 'widgets/wave_widget.dart';
 
 class CustomPaintPage2 extends StatefulWidget {
   const CustomPaintPage2({super.key});
