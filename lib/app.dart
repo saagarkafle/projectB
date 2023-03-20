@@ -4,6 +4,7 @@ import 'package:whatsapp/UI/screens/date_range_page.dart';
 import 'package:whatsapp/UI/screens/main_screens/home_page.dart';
 import 'package:whatsapp/UI/screens/nav_bar/nav_bar.dart';
 
+import 'UI/screens/animation_screens/hero_animation.dart';
 import 'UI/screens/nav_bar/pages/buttom_navigtion.dart';
 import 'UI/screens/test_page.dart';
 import 'UI/screens/used_package_screens/accordian.dart';
@@ -74,14 +75,14 @@ class AppModule extends Module {
             child: (context, args) => const NotificationPage(),
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
-        // ChildRoute('/hero',
-        //     child: (context, args) => const HeroAnimation(),
-        //     transition: TransitionType.fadeIn,
-        //     duration: const Duration(milliseconds: 600)),
-        // ChildRoute('/heroSecond',
-        //     child: (context, args) => const HeroSecond(),
-        //     transition: TransitionType.fadeIn,
-        //     duration: const Duration(milliseconds: 600)),
+        ChildRoute('/hero',
+            child: (context, args) => const HeroAnimation(),
+            transition: TransitionType.fadeIn,
+            duration: const Duration(milliseconds: 600)),
+        ChildRoute('/heroSecond',
+            child: (context, args) => const StretchyHeader(),
+            transition: TransitionType.fadeIn,
+            duration: const Duration(milliseconds: 600)),
         ChildRoute('/accor',
             child: (context, args) => const AccordionPage(),
             transition: TransitionType.fadeIn,
