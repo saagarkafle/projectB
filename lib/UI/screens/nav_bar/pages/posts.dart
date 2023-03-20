@@ -8,7 +8,7 @@ class PostsPage extends StatelessWidget {
     return const Scaffold(
       body: Center(
         child: Text(
-          'posts',
+          'Post Screen',
           style: TextStyle(fontSize: 42),
         ),
       ),

@@ -8,7 +8,7 @@ class SettingsPage extends StatelessWidget {
     return const Scaffold(
       body: Center(
         child: Text(
-          'settings',
+          'Settings screen',
           style: TextStyle(fontSize: 42),
         ),
       ),

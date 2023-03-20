@@ -4,7 +4,8 @@ import 'package:whatsapp/UI/screens/date_range_page.dart';
 import 'package:whatsapp/UI/screens/main_screens/home_page.dart';
 import 'package:whatsapp/UI/screens/nav_bar/nav_bar.dart';
 
-import 'UI/screens/nav_bar/pages/buttomnavigtion.dart';
+import 'UI/screens/nav_bar/pages/buttom_navigtion.dart';
+import 'UI/screens/test_page.dart';
 import 'UI/screens/used_package_screens/accordian.dart';
 import 'UI/screens/animation_screens/animated_icon.dart';
 import 'UI/screens/used_package_screens/calculator.dart';
@@ -16,7 +17,7 @@ import 'UI/screens/used_package_screens/shimmer_page.dart';
 import 'UI/screens/custom_paint_screens/custom_paint.dart';
 import 'UI/screens/main_screens/splash_screen.dart';
 import 'UI/screens/stretchy_header.dart';
-import 'UI/screens/test_page.dart';
+import 'UI/screens/notification.dart';
 import 'UI/screens/animation_screens/filp_card_screen.dart';
 import 'UI/screens/animation_screens/tween_page.dart';
 
@@ -67,6 +68,10 @@ class AppModule extends Module {
             duration: const Duration(milliseconds: 600)),
         ChildRoute('/test',
             child: (context, args) => const TestPage(),
+            transition: TransitionType.fadeIn,
+            duration: const Duration(milliseconds: 600)),
+        ChildRoute('/notification',
+            child: (context, args) => const NotificationPage(),
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
         // ChildRoute('/hero',

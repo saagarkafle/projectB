@@ -5,12 +5,30 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'app.dart';
+// Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+//   await Firebase.initializeApp();
+//   if (kDebugMode) {
+//     print('Handling a background message ${message.messageId}');
+//   }
+// }
 
 void main() {
 // Future<void> main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
-  // await FirebaseMessaging.instance.getInitialMessage();
+//   WidgetsFlutterBinding.ensureInitialized();
+//   await Firebase.initializeApp();
+//   // await FirebaseMessaging.instance.getInitialMessage();
+//    FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+//   await flutterLocalNotificationsPlugin
+//       .resolvePlatformSpecificImplementation<
+//           AndroidFlutterLocalNotificationsPlugin>()
+//       ?.createNotificationChannel(channel);
+
+//   await FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(
+//     alert: true,
+//     badge: true,
+//     sound: true,
+//   );
+
   runApp(
     ModularApp(
       module: AppModule(),

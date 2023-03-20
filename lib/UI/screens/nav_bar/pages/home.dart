@@ -10,7 +10,7 @@ class AHomePage extends StatelessWidget {
       backgroundColor: AppColors.darkBlue,
       body: const Center(
         child: Text(
-          'home',
+          'Home Screen',
           style: TextStyle(fontSize: 42),
         ),
       ),
