@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:audioplayers/audioplayers.dart';
 import 'package:whatsapp/constants/colours.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,6 +11,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // final audioPlayer = AudioCache();
     return WillPopScope(
       onWillPop: () async {
         return false;
@@ -36,7 +38,10 @@ class HomePage extends StatelessWidget {
                     // ),
                     CustomCard(
                         title: 'Test',
-                        onPressed: () => Modular.to.pushNamed('/test')),
+                        onPressed: () {
+                          // audioPlayer.load('/assets/audio/click.mp3');
+                          Modular.to.pushNamed('/test');
+                        }),
                     CustomCard(
                         title: 'Custom Painter',
                         onPressed: () => Modular.to.pushNamed('/cp')),
@@ -68,6 +73,9 @@ class HomePage extends StatelessWidget {
                     CustomCard(
                         title: 'Navigation bar',
                         onPressed: () => Modular.to.pushNamed('/navBar')),
+                    CustomCard(
+                        title: 'Navigation page',
+                        onPressed: () => Modular.to.pushNamed('/newnav')),
                     CustomCard(
                         title: 'Loading',
                         onPressed: () => Modular.to.pushNamed('/loading')),

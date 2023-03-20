@@ -1,15 +1,14 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:whatsapp/UI/screens/counter.dart';
 import 'package:whatsapp/UI/screens/date_range_page.dart';
-import 'package:whatsapp/UI/screens/animation_screens/hero_second.dart';
 import 'package:whatsapp/UI/screens/main_screens/home_page.dart';
 import 'package:whatsapp/UI/screens/nav_bar/nav_bar.dart';
 
+import 'UI/screens/nav_bar/pages/buttomnavigtion.dart';
 import 'UI/screens/used_package_screens/accordian.dart';
 import 'UI/screens/animation_screens/animated_icon.dart';
 import 'UI/screens/used_package_screens/calculator.dart';
 import 'UI/screens/custom_paint_screens/cp2page.dart';
-import 'UI/screens/animation_screens/hero_animation.dart';
 import 'UI/screens/animation_screens/loading.dart';
 import 'UI/screens/used_package_screens/maps.dart';
 import 'UI/screens/music_player/music_home.dart';
@@ -70,14 +69,14 @@ class AppModule extends Module {
             child: (context, args) => const TestPage(),
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
-        ChildRoute('/hero',
-            child: (context, args) => const HeroAnimation(),
-            transition: TransitionType.fadeIn,
-            duration: const Duration(milliseconds: 600)),
-        ChildRoute('/heroSecond',
-            child: (context, args) => const HeroSecond(),
-            transition: TransitionType.fadeIn,
-            duration: const Duration(milliseconds: 600)),
+        // ChildRoute('/hero',
+        //     child: (context, args) => const HeroAnimation(),
+        //     transition: TransitionType.fadeIn,
+        //     duration: const Duration(milliseconds: 600)),
+        // ChildRoute('/heroSecond',
+        //     child: (context, args) => const HeroSecond(),
+        //     transition: TransitionType.fadeIn,
+        //     duration: const Duration(milliseconds: 600)),
         ChildRoute('/accor',
             child: (context, args) => const AccordionPage(),
             transition: TransitionType.fadeIn,
@@ -104,6 +103,10 @@ class AppModule extends Module {
             duration: const Duration(milliseconds: 600)),
         ChildRoute('/counter',
             child: (context, args) => const Counter(title: 'Counter'),
+            transition: TransitionType.fadeIn,
+            duration: const Duration(milliseconds: 600)),
+        ChildRoute('/newnav',
+            child: (context, args) => const NaviagtionBar(),
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
       ];

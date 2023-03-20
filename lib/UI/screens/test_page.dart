@@ -11,6 +11,26 @@ class TestPage extends StatefulWidget {
 }
 
 class _TestPageState extends State<TestPage> {
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  // }
+
+  // void requestPermission() async {
+  //   FirebaseMessaging messaging = FirebaseMessaging.instance;
+
+  //   NotificationSettings settings = await messaging.requestPermission(
+  //     alert: true,
+  //     announcement: false,
+  //     criticalAlert: false,
+  //     sound: true,
+  //     badge: true,
+  //   );
+  // }
+
+  TextEditingController titleController = TextEditingController();
+  TextEditingController subTitleController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,11 +82,12 @@ class _TestPageState extends State<TestPage> {
             const SizedBox(height: 12),
             const Text('Subtitle'),
             const SizedBox(height: 6),
-            const CustomTextField(
+            CustomTextField(
               btnCurve: 4,
               keywordType: TextInputType.text,
               hintText: 'Subtitle',
               maxLines: 3,
+              controller: subTitleController,
             ),
             const SizedBox(height: 32),
             ActionButton(

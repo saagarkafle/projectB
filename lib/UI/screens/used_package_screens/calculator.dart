@@ -25,7 +25,7 @@ class _CalculatorState extends State<Calculator> {
             backgroundColor: AppColors.bgGreyColor,
             expressionAnswerColor: Colors.black,
             showAnswerField: true,
-            buttonRadius: 100,
+            buttonRadius: 12,
             clearButtonColor: AppColors.mainColor,
             operatorsButtonColor: AppColors.orangeColor,
             onChanged: (answer, expression) {},

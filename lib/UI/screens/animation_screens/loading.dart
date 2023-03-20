@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:whatsapp/constants/colours.dart';
 
 class LoadingPage extends StatefulWidget {
   const LoadingPage({super.key});
@@ -36,15 +37,23 @@ class _LoadingPageState extends State<LoadingPage>
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 120,
-      width: 120,
-      child: Center(
-        child: CustomPaint(
-          foregroundPainter: Loading(_animation!.value),
-          // child: Center(
-          //   child: Text(_animation!.value.toInt().toString()),
-          // ),
+    return Scaffold(
+      backgroundColor: AppColors.bgColor,
+      appBar: AppBar(
+        title: const Text('Loading page'),
+      ),
+      body: Center(
+        child: SizedBox(
+          height: 120,
+          width: 120,
+          child: Center(
+            child: CustomPaint(
+              foregroundPainter: Loading(_animation!.value),
+              // child: Center(
+              //   child: Text(_animation!.value.toInt().toString()),
+              // ),
+            ),
+          ),
         ),
       ),
     );
@@ -64,22 +73,22 @@ class Loading extends CustomPainter {
       ..strokeWidth = 20
       ..shader = const LinearGradient(
         colors: [
-          Color(0xff1C1A28),
-          Color(0xff920923),
+          Color.fromARGB(255, 234, 234, 8),
+          Color.fromARGB(255, 255, 0, 0),
         ],
       ).createShader(Rect.fromCircle(
         center: center,
         radius: radius,
       ))
-      ..color = const Color(0xff920923)
+      ..color = AppColors.blackColor
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
 
     double angle = 2 * pi * (value / 100);
 
     Paint circle = Paint()
-      ..strokeWidth = 15
-      ..color = const Color(0xff1C1A28)
+      ..strokeWidth = 22
+      ..color = const Color.fromARGB(255, 76, 191, 5)
       ..style = PaintingStyle.stroke;
 
     // Offset center = Offset(size.width / 2, size.height / 2);
