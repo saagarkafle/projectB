@@ -25,7 +25,7 @@ class FlipCard extends StatelessWidget {
           width: size ?? 100,
           decoration: BoxDecoration(
               border: Border.all(
-                  width: borderWidth ?? 1, color: AppColors.orangeColor),
+                  width: borderWidth ?? 1, color: AppColors.primaryColor),
               color: color ?? Colors.blue,
               borderRadius: BorderRadius.circular(10),
               boxShadow: [

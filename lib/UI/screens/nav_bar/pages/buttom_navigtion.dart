@@ -24,13 +24,15 @@ class _NaviagtionBarState extends State<NaviagtionBar> {
     const PostsPage(),
     const ProfilePage(),
     const SettingsPage(),
+    // const SettingsPage(),
   ];
-  final List<Widget> _pages1 = [
-    const Icon(Icons.home),
-    const Icon(Icons.abc),
-    const Icon(Icons.abc),
-    const Icon(Icons.abc),
-  ];
+  // final List<Widget> _pages1 = [
+  //   const Icon(Icons.home),
+  //   const Icon(Icons.abc),
+  //   const Icon(Icons.abc),
+  //   const Icon(Icons.abc),
+  //   const Icon(Icons.abc),
+  // ];
   Widget currentScreen = const AHomePage();
   void _onItemTapped(int index) {
     setState(() {
@@ -50,94 +52,73 @@ class _NaviagtionBarState extends State<NaviagtionBar> {
         child: _pages.elementAt(_selectedIndex),
       ),
       // floatingActionButton: FloatingActionButton(onPressed: () {}),
-      // floatingActionButtonLocation:
-      //     FloatingActionButtonLocation.miniCenterDocked,
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: Stack(
         children: [
           CustomPaint(
             size: Size(
               SizeConfig.screenHeight,
-              80,
+              60,
             ),
             painter: BarPainter(),
           ),
           BottomNavigationBar(
-              currentIndex: _selectedIndex,
-              type: BottomNavigationBarType.fixed,
-              onTap: _onItemTapped,
-              unselectedItemColor: AppColors.whiteColor,
-              selectedItemColor: AppColors.orangeColor,
-              backgroundColor: Colors.transparent,
-              items: _pages1
-                  .map((e) =>
-                      BottomNavigationBarItem(icon: e, label: 'Selected'))
-                  .toList()
-              // items: const [
-              //   BottomNavigationBarItem(
-              //     // icon: IconButton(
-              //     //     onPressed: () {
-              //     //       setState(() {
-              //     //         currentScreen = const AHomePage();
-              //     //         currentTab = 0;
-              //     //       });
-              //     //     },
-              //     //     icon: const Icon(
-              //     //       Icons.home,
-              //     //     )),
-              //     // label: 'Home',
-              //     icon: Icon(
-              //       Icons.home,
-              //     ),
-              //     label: 'Home',
-              //   ),
-              //   BottomNavigationBarItem(
-              //     // icon: IconButton(
-              //     //     onPressed: () {
-              //     //       setState(() {
-              //     //         currentScreen = const PostsPage();
-              //     //         currentTab = 1;
-              //     //       });
-              //     //     },
-              //     //     icon: const Icon(
-              //     //       Icons.post_add,
-              //     //     )),
-              //     // label: 'Posts',
-              //     icon: Icon(
-              //       Icons.podcasts,
-              //     ),
-              //     label: 'Posts',
-              //   ),
-              //   BottomNavigationBarItem(
-              //     // icon: IconButton(
-              //     //     onPressed: () {
-              //     //       setState(() {
-              //     //         currentScreen = const ProfilePage();
-              //     //         currentTab = 2;
-              //     //       });
-              //     //     },
-              //     //     icon: const Icon(
-              //     //       Icons.call,
-              //     //     )),
-              //     // label: 'Profile',
-              //     icon: Icon(
-              //       Icons.person,
-              //     ),
-              //     label: 'Profile',
-              //   ),
-              //   BottomNavigationBarItem(
-              //     icon: Icon(
-              //       Icons.settings,
-              //     ),
-              //     label: 'Settings',
-              //   ),
-              //   // BottomNavigationBarItem(
-              //   //   icon: Icon(
-              //   //     Icons.settings,
-              //   //   ),
-              //   //   label: 'Settings',
-              //   // ),
-              // ],
+            currentIndex: _selectedIndex,
+            iconSize: 28,
+            // showUnselectedLabels: false,
+            type: BottomNavigationBarType.fixed,
+            onTap: _onItemTapped,
+            unselectedItemColor: AppColors.secondaryColor,
+            selectedItemColor: AppColors.primaryColor,
+            backgroundColor: Colors.transparent,
+            // items: _pages1
+            //     .map((e) =>
+            //         BottomNavigationBarItem(icon: e, label: 'Selected'))
+            //     .toList()
+            items: const [
+              BottomNavigationBarItem(
+                // icon: IconButton(
+                //     onPressed: () {
+                //       setState(() {
+                //         currentScreen = const AHomePage();
+                //         currentTab = 0;
+                //       });
+                //     },
+                //     icon: const Icon(
+                //       Icons.home,
+                //     )),
+                // label: 'Home',
+                icon: Icon(
+                  Icons.home,
+                ),
+                label: 'Home',
               ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.podcasts,
+                ),
+                label: 'Posts',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.person,
+                ),
+                label: 'Profile',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.settings,
+                ),
+                label: 'Settings',
+              ),
+              // BottomNavigationBarItem(
+              //   icon: Icon(
+              //     Icons.settings,
+              //   ),
+              //   label: 'Settings',
+              // ),
+            ],
+          ),
         ],
       ),
     );

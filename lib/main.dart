@@ -50,7 +50,11 @@ class MyApp extends StatelessWidget {
           return GestureDetector(
             // this will remove keyword when clicked outside
             onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+
             child: MaterialApp.router(
+              theme: ThemeData(
+                primarySwatch: Colors.orange,
+              ),
               title: 'Flutter Demo',
               debugShowCheckedModeBanner: false,
               routeInformationParser: Modular.routeInformationParser,

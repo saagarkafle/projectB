@@ -27,7 +27,7 @@ class _CalculatorState extends State<Calculator> {
             showAnswerField: true,
             buttonRadius: 12,
             clearButtonColor: AppColors.mainColor,
-            operatorsButtonColor: AppColors.orangeColor,
+            operatorsButtonColor: AppColors.primaryColor,
             onChanged: (answer, expression) {},
           ),
           const SizedBox(

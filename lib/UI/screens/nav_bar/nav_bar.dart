@@ -69,13 +69,13 @@ class _NavBarState extends State<NavBar> {
                               setState(() {});
                             },
                             color:
-                                isHome ? AppColors.orangeColor : Colors.white,
+                                isHome ? AppColors.primaryColor : Colors.white,
                           ),
                           if (isHome)
                             Text(
                               'Home',
                               style: TextStyle(
-                                color: AppColors.orangeColor,
+                                color: AppColors.primaryColor,
                               ),
                             )
                         ],
@@ -93,13 +93,13 @@ class _NavBarState extends State<NavBar> {
                               setState(() {});
                             },
                             color:
-                                isPost ? AppColors.orangeColor : Colors.white,
+                                isPost ? AppColors.primaryColor : Colors.white,
                           ),
                           if (isPost)
                             Text(
                               'Post',
                               style: TextStyle(
-                                color: AppColors.orangeColor,
+                                color: AppColors.primaryColor,
                               ),
                             )
                         ],
@@ -120,14 +120,14 @@ class _NavBarState extends State<NavBar> {
                               setState(() {});
                             },
                             color: isProfile
-                                ? AppColors.orangeColor
+                                ? AppColors.primaryColor
                                 : Colors.white,
                           ),
                           if (isProfile)
                             Text(
                               'Profile',
                               style: TextStyle(
-                                color: AppColors.orangeColor,
+                                color: AppColors.primaryColor,
                               ),
                             )
                         ],
@@ -145,14 +145,14 @@ class _NavBarState extends State<NavBar> {
                               setState(() {});
                             },
                             color: isSettings
-                                ? AppColors.orangeColor
+                                ? AppColors.primaryColor
                                 : Colors.white,
                           ),
                           if (isSettings)
                             Text(
                               'Settings',
                               style: TextStyle(
-                                color: AppColors.orangeColor,
+                                color: AppColors.primaryColor,
                               ),
                             )
                         ],

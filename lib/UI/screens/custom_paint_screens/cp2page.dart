@@ -34,7 +34,7 @@ class _CustomPaintPage2State extends State<CustomPaintPage2>
     darkAnimationController =
         AnimationController(vsync: this, duration: const Duration(seconds: 1));
     sunColorAnimation =
-        ColorTween(begin: AppColors.orangeColor, end: Colors.red)
+        ColorTween(begin: AppColors.primaryColor, end: Colors.red)
             .animate(sunAnimationController);
     darkColorAnimation = ColorTween(begin: Colors.grey, end: Colors.black)
         .animate(darkAnimationController);

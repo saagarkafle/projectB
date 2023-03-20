@@ -26,7 +26,7 @@ class _TweenPageState extends State<TweenPage>
     animation = Tween(begin: 0.0, end: 300.0).animate(animationController);
 
     colorAnimation =
-        ColorTween(begin: AppColors.greenColor, end: AppColors.orangeColor)
+        ColorTween(begin: AppColors.secondaryColor, end: AppColors.primaryColor)
             .animate(animationController);
     animationController.addListener(() {
       print(animation.value);

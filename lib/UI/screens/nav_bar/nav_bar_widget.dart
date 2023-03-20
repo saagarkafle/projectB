@@ -52,13 +52,13 @@ class _NavBarWidState extends State<NavBarWid> {
                   onPressed: () {
                     setState(() {});
                   },
-                  color: AppColors.orangeColor,
+                  color: AppColors.primaryColor,
                 ),
                 // if (isHome)
                 Text(
                   'Home',
                   style: TextStyle(
-                    color: AppColors.orangeColor,
+                    color: AppColors.primaryColor,
                   ),
                 )
               ],

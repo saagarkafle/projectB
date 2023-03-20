@@ -111,14 +111,14 @@ class _DateRangePickedState extends State<DateRangePicked> {
                 children: [
                   Text(
                     "Start date: ${_selectedDateRange?.start.toString().split(' ')[0]}",
-                    style:
-                        TextStyle(fontSize: 24.sp, color: AppColors.greenColor),
+                    style: TextStyle(
+                        fontSize: 24.sp, color: AppColors.secondaryColor),
                   ),
                   SizedBox(height: 20.h),
                   Text(
                       "End date: ${_selectedDateRange?.end.toString().split(' ')[0]}",
                       style: TextStyle(
-                          fontSize: 24.sp, color: AppColors.orangeColor))
+                          fontSize: 24.sp, color: AppColors.primaryColor))
                 ],
               ),
             ),
