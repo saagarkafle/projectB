@@ -7,6 +7,7 @@ import 'package:whatsapp/UI/screens/nav_bar/nav_bar.dart';
 import 'UI/screens/animation_screens/hero_animation.dart';
 import 'UI/screens/nav_bar/pages/buttom_navigtion.dart';
 import 'UI/screens/test_page.dart';
+import 'UI/screens/test_page_2.dart';
 import 'UI/screens/used_package_screens/accordian.dart';
 import 'UI/screens/animation_screens/animated_icon.dart';
 import 'UI/screens/used_package_screens/calculator.dart';
@@ -69,6 +70,10 @@ class AppModule extends Module {
             duration: const Duration(milliseconds: 600)),
         ChildRoute('/test',
             child: (context, args) => const TestPage(),
+            transition: TransitionType.fadeIn,
+            duration: const Duration(milliseconds: 600)),
+        ChildRoute('/test2',
+            child: (context, args) => const TestPage2(),
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
         ChildRoute('/notification',

@@ -47,6 +47,12 @@ class HomePage extends StatelessWidget {
                           Modular.to.pushNamed('/test');
                         }),
                     CustomCard(
+                        title: 'Test 2',
+                        onPressed: () {
+                          // audioPlayer.load('/assets/audio/click.mp3');
+                          Modular.to.pushNamed('/test2');
+                        }),
+                    CustomCard(
                         title: 'Custom Painter',
                         onPressed: () => Modular.to.pushNamed('/cp')),
                     CustomCard(

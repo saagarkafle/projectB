@@ -30,6 +30,8 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   accordion: ^2.5.1
+  animated_text_kit: ^4.2.2
+  audioplayers: ^3.0.1
   cloud_firestore: ^4.4.5
   cupertino_icons: ^1.0.2
   curved_navigation_bar: ^1.0.3
@@ -44,12 +46,10 @@ dependencies:
   geolocator: ^9.0.2
   google_fonts: ^3.0.1
   google_maps_flutter: ^2.2.5
-  # http: ^0.13.5
-  reflective_visual: ^0.0.21
   just_audio: ^0.9.31
   on_audio_query: ^2.6.2
+  reflective_visual: ^0.0.21
   shimmer: ^2.0.0
-  audioplayers: ^3.0.1
 
 dev_dependencies:
   flutter_launcher_icons: ^0.12.0
