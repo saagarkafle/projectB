@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 // import 'package:audioplayers/audioplayers.dart';
 import 'package:whatsapp/constants/colours.dart';
@@ -6,8 +7,26 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'widgets/custom_card.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  void subscribeTopic() async {
+    await FirebaseMessaging.instance.subscribeToTopic(
+      "notification",
+    );
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    subscribeTopic();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,6 +92,9 @@ class HomePage extends StatelessWidget {
                     CustomCard(
                         title: 'Hero',
                         onPressed: () => Modular.to.pushNamed('/hero')),
+                    CustomCard(
+                        title: 'Notification',
+                        onPressed: () => Modular.to.pushNamed('/notification')),
                     CustomCard(
                         title: 'Stretchy header',
                         onPressed: () =>

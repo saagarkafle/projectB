@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
 import 'package:reflective_visual/reflective.dart';
 
-Future<void> main() async {
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
-  runApp(
-    const MaterialApp(
-      home: TestPage(),
-      debugShowCheckedModeBanner: false,
-    ),
-  );
-}
+// Future<void> main() async {
+//   SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
+//   runApp(
+//     const MaterialApp(
+//       home: TestPage(),
+//       debugShowCheckedModeBanner: false,
+//     ),
+//   );
+// }
 
 class TestPage extends StatefulWidget {
   const TestPage({super.key});
