@@ -6,6 +6,8 @@ import 'package:whatsapp/UI/screens/nav_bar/nav_bar.dart';
 
 import 'UI/screens/animation_screens/hero_animation.dart';
 import 'UI/screens/nav_bar/pages/buttom_navigtion.dart';
+// import 'UI/screens/random_number/random.dart';
+import 'UI/screens/random_number/random.dart';
 import 'UI/screens/test_page.dart';
 import 'UI/screens/test_page_2.dart';
 import 'UI/screens/used_package_screens/accordian.dart';
@@ -117,11 +119,15 @@ class AppModule extends Module {
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
         ChildRoute('/counter',
-            child: (context, args) => const Counter(title: 'Counter'),
+            child: (context, args) => const Counter(),
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
         ChildRoute('/newnav',
             child: (context, args) => const NaviagtionBar(),
+            transition: TransitionType.fadeIn,
+            duration: const Duration(milliseconds: 600)),
+        ChildRoute('/random',
+            child: (context, args) => const RandomNumberApp(),
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
       ];
