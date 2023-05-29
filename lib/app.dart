@@ -132,7 +132,7 @@ class AppModule extends Module {
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
         ChildRoute('/charts',
-            child: (context, args) => const Chart(),
+            child: (context, args) => const LineGraphChart(),
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
       ];
