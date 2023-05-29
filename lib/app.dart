@@ -5,6 +5,7 @@ import 'package:whatsapp/UI/screens/main_screens/home_page.dart';
 import 'package:whatsapp/UI/screens/nav_bar/nav_bar.dart';
 
 import 'UI/screens/animation_screens/hero_animation.dart';
+import 'UI/screens/charts/chart.dart';
 import 'UI/screens/nav_bar/pages/buttom_navigtion.dart';
 // import 'UI/screens/random_number/random.dart';
 import 'UI/screens/random_number/random.dart';
@@ -128,6 +129,10 @@ class AppModule extends Module {
             duration: const Duration(milliseconds: 600)),
         ChildRoute('/random',
             child: (context, args) => const RandomNumberApp(),
+            transition: TransitionType.fadeIn,
+            duration: const Duration(milliseconds: 600)),
+        ChildRoute('/charts',
+            child: (context, args) => const Chart(),
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
       ];

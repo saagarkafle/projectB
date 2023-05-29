@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../constants/colours.dart';
+
 class StretchyHeader extends StatefulWidget {
   const StretchyHeader({super.key});
 
@@ -35,15 +37,15 @@ class _StretchyHeaderState extends State<StretchyHeader> {
               background: Stack(
                 fit: StackFit.expand,
                 children: [
-                  // DecoratedBox(
-                  //     decoration: BoxDecoration(
-                  //         gradient: LinearGradient(
-                  //             begin: const Alignment(0, 0.5),
-                  //             end: const Alignment(0, 0),
-                  //             colors: [
-                  //       AppColors.bgColor,
-                  //       AppColors.darkBlue
-                  //     ]))),
+                  DecoratedBox(
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: const Alignment(0, 0.5),
+                              end: const Alignment(0, 0),
+                              colors: [
+                        AppColors.bgColor,
+                        AppColors.darkBlue
+                      ]))),
                   Hero(
                     tag: 'tag-2',
                     child: Image.asset("assets/messi.jpg",

@@ -126,6 +126,9 @@ class _HomePageState extends State<HomePage> {
                     CustomCard(
                         title: 'Random',
                         onPressed: () => Modular.to.pushNamed('/random')),
+                    CustomCard(
+                        title: 'Charts',
+                        onPressed: () => Modular.to.pushNamed('/charts')),
                   ],
                 ),
               ),

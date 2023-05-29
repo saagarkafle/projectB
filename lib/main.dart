@@ -6,10 +6,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:whatsapp/UI/screens/theme/theme.dart';
 
 import 'models/notification_model.dart';
-
-import 'dart:math' as math;
 
 import 'app.dart';
 
@@ -66,95 +65,6 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  final FirebaseMessaging _messaging = FirebaseMessaging.instance;
-  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-      FlutterLocalNotificationsPlugin();
-
-  NotificationSettings? settings;
-
-  getMessaging() async {
-    settings = await _messaging.requestPermission(
-        alert: true,
-        announcement: false,
-        badge: true,
-        carPlay: false,
-        criticalAlert: false,
-        provisional: false,
-        sound: true);
-  }
-
-  AndroidNotificationChannel channel = const AndroidNotificationChannel(
-      'high_importance_channel', // id
-      'High Importance Notifications', // title
-
-      importance: Importance.high,
-      playSound: true);
-
-  // late FirebaseMessaging messaging;
-
-  @override
-  void initState() {
-    super.initState();
-    showNotificationsInApp();
-    // subscribeTopic();
-    FirebaseMessaging.onMessage.listen((event) async {
-      AndroidNotificationDetails? androidPlatformChannelSpecifics;
-      androidPlatformChannelSpecifics = const AndroidNotificationDetails(
-        'your channel id',
-        'channel name',
-        importance: Importance.max,
-        priority: Priority.high,
-      );
-      // DarwinNotificationDetails? iosDetails;
-      // iosDetails = const DarwinNotificationDetails(
-      //   presentAlert: true,
-      //   presentBadge: true,
-      //   presentSound: true,
-      // );
-
-      NotificationDetails platformChannelSpecifics = NotificationDetails(
-        android: androidPlatformChannelSpecifics,
-        // iOS: iosDetails
-      );
-      final notification = NotificationModel(
-        event.notification!.title!,
-        event.notification!.body!,
-      );
-      String notificationJsonString = notification.toJsonString();
-      await flutterLocalNotificationsPlugin.show(
-        math.Random().nextInt(120000),
-        event.notification!.title!,
-        event.notification!.body!,
-        platformChannelSpecifics,
-        // payload: notificationJsonString,
-      );
-    });
-    // FirebaseMessaging.onMessageOpenedApp.listen((event) {
-    //   final notification = NotificationModel(
-    //     event.notification!.title!,
-    //     event.notification!.body!,
-    //   );
-    // });
-  }
-
-  void showNotificationsInApp() async {
-    const AndroidInitializationSettings initializationSettingsAndroid =
-        AndroidInitializationSettings('mipmap/ic_launcher');
-    // const DarwinInitializationSettings initializationSettingsIOS =
-    //     DarwinInitializationSettings();
-    const InitializationSettings initializationSettings =
-        InitializationSettings(
-      android: initializationSettingsAndroid,
-      // iOS: initializationSettingsIOS,
-    );
-    // await flutterLocalNotificationsPlugin.initialize(initializationSettings);
-    await flutterLocalNotificationsPlugin.initialize(
-      initializationSettings,
-      onDidReceiveBackgroundNotificationResponse: selectNotification,
-      onDidReceiveNotificationResponse: selectNotification,
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -166,9 +76,11 @@ class _AppState extends State<App> {
             // this will remove keyword when clicked outside
             onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
             child: MaterialApp.router(
-              theme: ThemeData(
-                primarySwatch: Colors.orange,
-              ),
+              darkTheme: ThemeClass.darkTheme,
+              theme: ThemeClass.lightTheme,
+              // theme: ThemeData(
+              //   primarySwatch: Colors.orange,
+              // ),
               title: 'Flutter Demo',
               debugShowCheckedModeBanner: false,
               routeInformationParser: Modular.routeInformationParser,
