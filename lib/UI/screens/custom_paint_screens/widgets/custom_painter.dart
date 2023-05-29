@@ -15,7 +15,7 @@ class CirclePainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
 
-    Offset center = Offset(size.width / 2, size.height / 2);
+    // Offset center = Offset(size.width / 2, size.height / 2);
     // Offset start = const Offset(0, 0);
     // Offset end = const Offset(100, 0);
 
