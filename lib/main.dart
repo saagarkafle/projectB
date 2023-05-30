@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
-import 'UI/screens/theme/colors.dart';
+import 'UI/screens/theme/theme_colors.dart';
 import 'UI/screens/theme/theme_provider.dart';
 import 'UI/screens/theme/typo.dart';
 import 'models/notification_model.dart';

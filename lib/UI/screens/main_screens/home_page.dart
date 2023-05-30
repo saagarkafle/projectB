@@ -5,7 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../theme/colors.dart';
+import '../theme/theme_colors.dart';
 import '../theme/theme_provider.dart';
 import 'widgets/custom_card.dart';
 

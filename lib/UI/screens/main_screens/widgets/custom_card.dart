@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:whatsapp/UI/screens/theme/theme_provider.dart';
 
 import '../../../../constants/colours.dart';
-import '../../theme/colors.dart';
+import '../../theme/theme_colors.dart';
 
 // ignore: must_be_immutable
 class CustomCard extends ConsumerWidget {
