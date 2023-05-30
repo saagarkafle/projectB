@@ -1,10 +1,12 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 // import 'package:audioplayers/audioplayers.dart';
-import 'package:whatsapp/constants/colours.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../theme/colors.dart';
+import '../theme/theme_provider.dart';
 import 'widgets/custom_card.dart';
 
 class HomePage extends StatefulWidget {
@@ -36,11 +38,26 @@ class _HomePageState extends State<HomePage> {
         return false;
       },
       child: Scaffold(
-        backgroundColor: AppColors.bgColor,
+        backgroundColor: lightColorScheme.background,
         appBar: AppBar(
           title: const Text('Home Page...'),
           elevation: 2,
           titleSpacing: 10,
+          actions: [
+            Consumer(builder: (context, ref, child) {
+              final theme = ref.watch(themeModeProvider);
+              return IconButton(
+                  onPressed: () {
+                    ref.read(themeModeProvider.notifier).state =
+                        theme == ThemeMode.light
+                            ? ThemeMode.dark
+                            : ThemeMode.light;
+                  },
+                  icon: Icon(theme == ThemeMode.dark
+                      ? Icons.light_mode
+                      : Icons.dark_mode));
+            }),
+          ],
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -55,20 +72,14 @@ class _HomePageState extends State<HomePage> {
                   runSpacing: 10.h,
                   crossAxisAlignment: WrapCrossAlignment.start,
                   children: [
-                    // CustomCard(
-                    //   title: 'Custom Paint',
-                    //   onPressed: () => Modular.to.pushNamed('/second'),
-                    // ),
                     CustomCard(
                         title: 'Test',
                         onPressed: () {
-                          // audioPlayer.load('/assets/audio/click.mp3');
                           Modular.to.pushNamed('/test');
                         }),
                     CustomCard(
                         title: 'Test 2',
                         onPressed: () {
-                          // audioPlayer.load('/assets/audio/click.mp3');
                           Modular.to.pushNamed('/test2');
                         }),
                     CustomCard(

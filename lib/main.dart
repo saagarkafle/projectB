@@ -6,8 +6,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:whatsapp/UI/screens/theme/theme.dart';
 
+import 'UI/screens/theme/colors.dart';
+import 'UI/screens/theme/theme_provider.dart';
+import 'UI/screens/theme/typo.dart';
 import 'models/notification_model.dart';
 
 import 'app.dart';
@@ -57,16 +59,19 @@ const AndroidNotificationChannel channel = AndroidNotificationChannel(
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
 
-class App extends StatefulWidget {
+class App extends ConsumerStatefulWidget {
   const App({Key? key}) : super(key: key);
 
   @override
-  State<App> createState() => _AppState();
+  ConsumerState<App> createState() => _AppState();
 }
 
-class _AppState extends State<App> {
+class _AppState extends ConsumerState<App> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(
+    BuildContext context,
+  ) {
+    final themeMode = ref.watch(themeModeProvider);
     return ScreenUtilInit(
         designSize: const Size(360, 800),
         minTextAdapt: true,
@@ -76,11 +81,21 @@ class _AppState extends State<App> {
             // this will remove keyword when clicked outside
             onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
             child: MaterialApp.router(
-              darkTheme: ThemeClass.darkTheme,
-              theme: ThemeClass.lightTheme,
-              // theme: ThemeData(
-              //   primarySwatch: Colors.orange,
-              // ),
+              // this is used for default theme mode
+              // darkTheme: ThemeClass.darkTheme,
+              // theme: ThemeClass.lightTheme,
+
+              theme: ThemeData(
+                useMaterial3: true,
+                colorScheme: lightColorScheme,
+                textTheme: textTheme,
+              ),
+              darkTheme: ThemeData(
+                useMaterial3: true,
+                colorScheme: darkColorScheme,
+                textTheme: textTheme,
+              ),
+              themeMode: themeMode,
               title: 'Flutter Demo',
               debugShowCheckedModeBanner: false,
               routeInformationParser: Modular.routeInformationParser,
