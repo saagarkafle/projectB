@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:whatsapp/UI/screens/theme/theme_provider.dart';
 
 import '../../../../constants/colours.dart';
+import '../../theme/colors.dart';
 
 // ignore: must_be_immutable
-class CustomCard extends StatelessWidget {
+class CustomCard extends ConsumerWidget {
   String title;
   VoidCallback? onPressed;
 
@@ -15,12 +18,15 @@ class CustomCard extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final theme = ref.watch(themeModeProvider);
     return GestureDetector(
       onTap: onPressed,
       child: Card(
         elevation: 15,
-        color: AppColors.whiteColor,
+        color: theme == ThemeMode.dark
+            ? lightColorScheme.background
+            : darkColorScheme.background,
         shadowColor: AppColors.darkBlue,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
@@ -40,7 +46,9 @@ class CustomCard extends StatelessWidget {
               title,
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: AppColors.blackColor,
+                color: theme == ThemeMode.dark
+                    ? darkColorScheme.background
+                    : lightColorScheme.background,
                 fontSize: 18.sp,
               ),
             )),

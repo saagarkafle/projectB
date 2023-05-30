@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class AppColors {
   static Color redColor = Colors.red;
   static Color bgColor = const Color(0xffF3F3F3);

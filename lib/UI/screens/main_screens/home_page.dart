@@ -9,14 +9,14 @@ import '../theme/colors.dart';
 import '../theme/theme_provider.dart';
 import 'widgets/custom_card.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  ConsumerState<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends ConsumerState<HomePage> {
   void subscribeTopic() async {
     await FirebaseMessaging.instance.subscribeToTopic(
       "notification",
@@ -32,20 +32,23 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = ref.watch(themeModeProvider);
+
     // final audioPlayer = AudioCache();
     return WillPopScope(
       onWillPop: () async {
         return false;
       },
       child: Scaffold(
-        backgroundColor: lightColorScheme.background,
+        backgroundColor: theme == ThemeMode.dark
+            ? darkColorScheme.background
+            : lightColorScheme.background,
         appBar: AppBar(
           title: const Text('Home Page...'),
           elevation: 2,
           titleSpacing: 10,
           actions: [
             Consumer(builder: (context, ref, child) {
-              final theme = ref.watch(themeModeProvider);
               return IconButton(
                   onPressed: () {
                     ref.read(themeModeProvider.notifier).state =
