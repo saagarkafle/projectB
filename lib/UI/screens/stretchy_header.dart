@@ -13,23 +13,19 @@ class _StretchyHeaderState extends State<StretchyHeader> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('Custom Painter 2'),
-      // ),
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
           SliverAppBar(
             pinned: true,
-            excludeHeaderSemantics:
-                true, // backgroundColor: Colors.orangeAccent,
+            excludeHeaderSemantics: true,
             expandedHeight: 350,
             stretchTriggerOffset: 200,
             stretch: true,
             flexibleSpace: FlexibleSpaceBar(
               stretchModes: const [
                 StretchMode.zoomBackground,
-                StretchMode.fadeTitle,
+                // StretchMode.fadeTitle,
                 // StretchMode.blurBackground,
               ],
               title: const Text('About Messi'),

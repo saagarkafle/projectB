@@ -74,12 +74,24 @@ class _AnimPageState extends State<AnimPage> with TickerProviderStateMixin {
           children: [
             Stack(
               children: [
-                CustomPaint(
-                  size: Size(
-                    SizeConfig.screenHeight,
-                    80,
-                  ),
-                  painter: BgPainter(),
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    CustomPaint(
+                      size: Size(
+                        SizeConfig.screenHeight,
+                        0,
+                      ),
+                      painter: BgPainter(),
+                    ),
+                    CustomPaint(
+                      size: Size(
+                        SizeConfig.screenHeight - 200,
+                        80,
+                      ),
+                      painter: BgPainter2(),
+                    ),
+                  ],
                 ),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -87,7 +99,6 @@ class _AnimPageState extends State<AnimPage> with TickerProviderStateMixin {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const SizedBox(height: 20),
-                      // Icon(Icons.menu, size: 40),
                       GestureDetector(
                         child: AnimatedIcon(
                           icon: AnimatedIcons.menu_home,
@@ -108,7 +119,7 @@ class _AnimPageState extends State<AnimPage> with TickerProviderStateMixin {
                       const Text(
                         ' Generation',
                         style: TextStyle(fontSize: 32),
-                      )
+                      ),
                     ],
                   ),
                 ),
