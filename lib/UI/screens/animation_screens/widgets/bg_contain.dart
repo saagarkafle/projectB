@@ -9,12 +9,14 @@ class BgPainter extends CustomPainter {
     Path path = Path()..moveTo(0, 0);
     path.lineTo(size.width, 0);
     path.lineTo(size.width, 180);
-    path.lineTo(100, 180);
-    path.quadraticBezierTo(15, 180, 0, 260);
-    path.quadraticBezierTo(0, 360, 100, 360);
+    path.lineTo(140, 180);
+    path.quadraticBezierTo(50, 180, 40, 260);
+    path.quadraticBezierTo(40, 360, 140, 360);
     path.lineTo(size.width, 360);
     path.lineTo(size.width, 460);
-    path.lineTo(0, 460);
+    path.lineTo(100, 460);
+    path.quadraticBezierTo(30, 460, 0, 390);
+    path.lineTo(0, 390);
     path.close();
     canvas.drawPath(path, paint);
   }
