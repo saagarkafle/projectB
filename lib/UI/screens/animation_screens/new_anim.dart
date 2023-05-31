@@ -80,13 +80,13 @@ class _AnimPageState extends State<AnimPage>
                   return Stack(
                     children: [
                       Positioned(
-                        left: MediaQuery.of(context).size.width * 0.85,
+                        left: MediaQuery.of(context).size.width * 0.7,
                         top: MediaQuery.of(context).size.height *
                             _animation.value.dy,
-                        height: MediaQuery.of(context).size.height * 0.41,
+                        height: MediaQuery.of(context).size.height * 0.61,
                         child: const Icon(
-                          Icons.home,
-                          size: 48,
+                          Icons.pause,
+                          size: 88,
                         ),
                       ),
                       Positioned(
@@ -96,7 +96,7 @@ class _AnimPageState extends State<AnimPage>
                         height: MediaQuery.of(context).size.height * 0.61,
                         child: const Icon(
                           Icons.play_arrow,
-                          size: 48,
+                          size: 100,
                         ),
                       ),
                     ],
