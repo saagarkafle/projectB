@@ -33,71 +33,75 @@ class _NotificationPageState extends State<NotificationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Notifications'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // EachTextField(
-            //   onChanged: (p0) {
-            //     return null;
-            //   },
-            //   textColor: Colors.black,
-            //   contentPadding: const EdgeInsets.all(0),
-            //   inputAction: TextInputAction.none,
-            //   hintText: 'Enter title',
-            //   fillColor: Colors.red,
-            //   filled: false,
-            //   isDense: false,
-            //   btnCurve: 4,
-            //   border: false,
-            // ),
-            // // const SizedBox(height: 16),
-            // EachTextField(
-            //   onChanged: (p0) {
-            //     return null;
-            //   },
-            //   textColor: Colors.black,
-            //   contentPadding: const EdgeInsets.all(0),
-            //   inputAction: TextInputAction.none,
-            //   hintText: 'Enter subtitle',
-            //   fillColor: Colors.red,
-            //   filled: false,
-            //   isDense: false,
-            //   btnCurve: 0,
-            //   border: false,
-            // ),
-            const Text('Title'),
-            const SizedBox(height: 6),
-            const CustomTextField(
-              btnCurve: 4,
-              keywordType: TextInputType.text,
-              hintText: 'Ttile',
-              maxLength: 40,
-            ),
-            const SizedBox(height: 12),
-            const Text('Subtitle'),
-            const SizedBox(height: 6),
-            CustomTextField(
-              btnCurve: 4,
-              keywordType: TextInputType.text,
-              hintText: 'Subtitle',
-              maxLines: 3,
-              controller: subTitleController,
-            ),
-            const SizedBox(height: 32),
-            ActionButton(
-                btnName: 'Send Notification',
-                btnCurve: 40.r,
-                btnHeight: 48.h,
-                txtFontSize: 16.sp,
-                btnAction: () {})
-          ],
+        resizeToAvoidBottomInset: true,
+        appBar: AppBar(
+          title: const Text('Notifications'),
         ),
-      ),
-    );
+        body: SingleChildScrollView(
+          padding: EdgeInsets.only(
+              top: 50, bottom: MediaQuery.of(context).viewInsets.bottom),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // EachTextField(
+                //   onChanged: (p0) {
+                //     return null;
+                //   },
+                //   textColor: Colors.black,
+                //   contentPadding: const EdgeInsets.all(0),
+                //   inputAction: TextInputAction.none,
+                //   hintText: 'Enter title',
+                //   fillColor: Colors.red,
+                //   filled: false,
+                //   isDense: false,
+                //   btnCurve: 4,
+                //   border: false,
+                // ),
+                // // const SizedBox(height: 16),
+                // EachTextField(
+                //   onChanged: (p0) {
+                //     return null;
+                //   },
+                //   textColor: Colors.black,
+                //   contentPadding: const EdgeInsets.all(0),
+                //   inputAction: TextInputAction.none,
+                //   hintText: 'Enter subtitle',
+                //   fillColor: Colors.red,
+                //   filled: false,
+                //   isDense: false,
+                //   btnCurve: 0,
+                //   border: false,
+                // ),
+                const Text('Title'),
+                const SizedBox(height: 6),
+                const CustomTextField(
+                  btnCurve: 4,
+                  keywordType: TextInputType.text,
+                  hintText: 'Ttile',
+                  maxLength: 40,
+                ),
+                const SizedBox(height: 300),
+                const Text('Subtitle'),
+                const SizedBox(height: 6),
+                CustomTextField(
+                  btnCurve: 4,
+                  keywordType: TextInputType.text,
+                  hintText: 'Subtitle',
+                  maxLines: 3,
+                  controller: subTitleController,
+                ),
+                const SizedBox(height: 32),
+                ActionButton(
+                    btnName: 'Send Notification',
+                    btnCurve: 40.r,
+                    btnHeight: 48.h,
+                    txtFontSize: 16.sp,
+                    btnAction: () {})
+              ],
+            ),
+          ),
+        ));
   }
 }

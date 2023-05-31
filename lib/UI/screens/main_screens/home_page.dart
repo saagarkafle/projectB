@@ -89,6 +89,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                         title: 'Custom Painter',
                         onPressed: () => Modular.to.pushNamed('/cp')),
                     CustomCard(
+                        title: 'Anim',
+                        onPressed: () => Modular.to.pushNamed('/anim')),
+                    CustomCard(
                         title: 'Shimmer Effect',
                         onPressed: () => Modular.to.pushNamed('/third')),
                     CustomCard(

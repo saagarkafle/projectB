@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:whatsapp/UI/screens/animation_screens/new_anim.dart';
 import 'package:whatsapp/UI/screens/counter.dart';
 import 'package:whatsapp/UI/screens/date_range_page.dart';
 import 'package:whatsapp/UI/screens/main_screens/home_page.dart';
@@ -133,6 +134,10 @@ class AppModule extends Module {
             duration: const Duration(milliseconds: 600)),
         ChildRoute('/charts',
             child: (context, args) => const LineGraphChart(),
+            transition: TransitionType.fadeIn,
+            duration: const Duration(milliseconds: 600)),
+        ChildRoute('/anim',
+            child: (context, args) => const AnimPage(),
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
       ];
