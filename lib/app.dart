@@ -10,6 +10,7 @@ import 'UI/screens/charts/chart.dart';
 import 'UI/screens/nav_bar/pages/buttom_navigtion.dart';
 // import 'UI/screens/random_number/random.dart';
 import 'UI/screens/random_number/random.dart';
+import 'UI/screens/tabbar/tabbar.dart';
 import 'UI/screens/test_page.dart';
 import 'UI/screens/test_page_2.dart';
 import 'UI/screens/used_package_screens/accordian.dart';
@@ -129,7 +130,7 @@ class AppModule extends Module {
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
         ChildRoute('/random',
-            child: (context, args) => const RandomNumberApp(),
+            child: (context, args) => const DashboardPage(),
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
         ChildRoute('/charts',
@@ -138,6 +139,10 @@ class AppModule extends Module {
             duration: const Duration(milliseconds: 600)),
         ChildRoute('/anim',
             child: (context, args) => const AnimPage(),
+            transition: TransitionType.fadeIn,
+            duration: const Duration(milliseconds: 600)),
+        ChildRoute('/tabbar',
+            child: (context, args) => const TabBarPage(),
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
       ];
