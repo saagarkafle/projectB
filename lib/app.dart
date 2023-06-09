@@ -9,7 +9,7 @@ import 'UI/screens/animation_screens/hero_animation.dart';
 import 'UI/screens/charts/chart.dart';
 import 'UI/screens/nav_bar/pages/buttom_navigtion.dart';
 // import 'UI/screens/random_number/random.dart';
-import 'UI/screens/random_number/random.dart';
+import 'UI/screens/random_page/random.dart';
 import 'UI/screens/tabbar/tabbar.dart';
 import 'UI/screens/test_page.dart';
 import 'UI/screens/test_page_2.dart';
