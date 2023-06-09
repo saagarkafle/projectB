@@ -95,6 +95,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                         title: 'Shimmer Effect',
                         onPressed: () => Modular.to.pushNamed('/third')),
                     CustomCard(
+                        title: 'Tab Bar',
+                        onPressed: () => Modular.to.pushNamed('/tabbar')),
+                    CustomCard(
                         title: 'Tween Animation',
                         onPressed: () => Modular.to.pushNamed('/tween')),
                     CustomCard(
