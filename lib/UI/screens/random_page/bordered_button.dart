@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
 class BordredButton extends StatelessWidget {
   final String title;
   final double radius;
@@ -10,7 +8,7 @@ class BordredButton extends StatelessWidget {
   final double textSize;
   final Color? buttonColor;
   final Color? textColor;
-  final Function() buttonAction;
+  final Function() onTap;
 
   const BordredButton({
     Key? key,
@@ -19,7 +17,7 @@ class BordredButton extends StatelessWidget {
     required this.height,
     this.width,
     required this.textSize,
-    required this.buttonAction,
+    required this.onTap,
     this.buttonColor,
     this.textColor,
   }) : super(key: key);
@@ -27,7 +25,7 @@ class BordredButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: buttonAction,
+      onTap: onTap,
       child: Container(
         alignment: Alignment.center,
         padding: const EdgeInsets.symmetric(horizontal: 4),

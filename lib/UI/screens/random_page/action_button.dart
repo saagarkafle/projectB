@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class FilledButton1 extends StatelessWidget {
+class ActionButton extends StatelessWidget {
   final String title;
   final double radius;
   final double height;
@@ -8,16 +8,16 @@ class FilledButton1 extends StatelessWidget {
   final double fontSize;
   final Color? buttonColor;
   final Color? titleColor;
-  final Function() buttonAction;
+  final Function() onTap;
 
-  const FilledButton1({
+  const ActionButton({
     Key? key,
     required this.title,
     required this.radius,
     required this.height,
     this.width,
     required this.fontSize,
-    required this.buttonAction,
+    required this.onTap,
     this.buttonColor,
     this.titleColor,
   }) : super(key: key);
@@ -25,7 +25,7 @@ class FilledButton1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: buttonAction,
+      onTap: onTap,
       child: Container(
         alignment: Alignment.center,
         padding: const EdgeInsets.symmetric(horizontal: 8),

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp/UI/screens/random_page/slidable.dart';
+import 'package:whatsapp/UI/screens/random_page/slidable_widget.dart';
 
 import 'bulleted_item.dart';
-import 'button.dart';
-import 'buttons.dart';
+import 'action_button.dart';
+import 'bordered_button.dart';
 import 'first_painter.dart';
+import 'graph_painter.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
@@ -111,9 +112,9 @@ class DashboardPage extends StatelessWidget {
                         ),
                         Center(
                           child: SizedBox(
-                            width: 200,
-                            height: 100,
-                            child: HalfCircleWidget1(),
+                            width: 250,
+                            height: 125,
+                            child: GraphWidget(),
                           ),
                         ),
                       ],
@@ -131,7 +132,7 @@ class DashboardPage extends StatelessWidget {
                         radius: 7,
                         height: 26,
                         textSize: 10,
-                        buttonAction: () {},
+                        onTap: () {},
                       ),
                       const SizedBox(width: 10),
                       BordredButton(
@@ -139,7 +140,7 @@ class DashboardPage extends StatelessWidget {
                         radius: 7,
                         height: 26,
                         textSize: 10,
-                        buttonAction: () {},
+                        onTap: () {},
                       ),
                     ],
                   ),
@@ -186,14 +187,14 @@ class DashboardPage extends StatelessWidget {
                                   text: '4 complimentry lounge access',
                                 ),
                                 const SizedBox(height: 12),
-                                FilledButton1(
+                                ActionButton(
                                     title: 'Apply Now',
                                     radius: 6,
                                     width: 100,
                                     height: 28,
                                     fontSize: 12,
                                     titleColor: Colors.white,
-                                    buttonAction: () {})
+                                    onTap: () {})
                               ]),
                         ),
                         Expanded(
@@ -224,120 +225,6 @@ class DashboardPage extends StatelessWidget {
   }
 }
 
-class SecondLinePainter extends CustomPainter {
-  final int value;
-  SecondLinePainter(this.value);
-  @override
-  void paint(Canvas canvas, Size size) {
-    // draw triangle
-    final tri = Paint()
-      ..color = Colors.black
-      ..strokeWidth = 1.0
-      ..style = PaintingStyle.stroke;
-    final linePaint = Paint()
-      ..color = Colors.blue
-      ..strokeWidth = 7.0
-      ..strokeCap = StrokeCap.round
-      ..style = PaintingStyle.stroke;
-    final linePaint1 = Paint()
-      ..color = Colors.orange
-      ..strokeWidth = 7.0
-      ..strokeCap = StrokeCap.round
-      ..style = PaintingStyle.stroke;
-
-    var linePath = Path();
-    linePath.moveTo(size.width * 0, size.height * 0.3);
-    linePath.lineTo(size.width * 0.28, size.height * 0.3);
-
-    // Draw the black triangle
-    var trianglePath = Path();
-    trianglePath.moveTo(size.width * 0, 0);
-    trianglePath.lineTo(size.width * 0.07, 0);
-    trianglePath.moveTo(size.width * 0.14, 0);
-    trianglePath.lineTo(size.width * 0.21, 0);
-    trianglePath.moveTo(size.width * 0.28, 0);
-    trianglePath.lineTo(size.width * 0.35, 0);
-    trianglePath.moveTo(size.width * 0.42, 0);
-    trianglePath.lineTo(size.width * 0.49, 0);
-    trianglePath.moveTo(size.width * 0.56, 0);
-    trianglePath.lineTo(size.width * 0.63, 0);
-    trianglePath.moveTo(size.width * 0.70, 0);
-    trianglePath.lineTo(size.width * 0.77, 0);
-    trianglePath.moveTo(size.width * 0.84, 0);
-    trianglePath.lineTo(size.width * 0.91, 0);
-    //
-    trianglePath.moveTo(size.width * 0, size.height * 0.3);
-    trianglePath.lineTo(size.width * 0.07, size.height * 0.3);
-    trianglePath.moveTo(size.width * 0.14, size.height * 0.3);
-    trianglePath.lineTo(size.width * 0.21, size.height * 0.3);
-    trianglePath.moveTo(size.width * 0.28, size.height * 0.3);
-    trianglePath.lineTo(size.width * 0.35, size.height * 0.3);
-    trianglePath.moveTo(size.width * 0.42, size.height * 0.3);
-    trianglePath.lineTo(size.width * 0.49, size.height * 0.3);
-    trianglePath.moveTo(size.width * 0.56, size.height * 0.3);
-    trianglePath.lineTo(size.width * 0.63, size.height * 0.3);
-    trianglePath.moveTo(size.width * 0.70, size.height * 0.3);
-    trianglePath.lineTo(size.width * 0.77, size.height * 0.3);
-    trianglePath.moveTo(size.width * 0.84, size.height * 0.3);
-    trianglePath.lineTo(size.width * 0.91, size.height * 0.3);
-    //
-    trianglePath.moveTo(size.width * 0, size.height * 0.6);
-    trianglePath.lineTo(size.width * 0.07, size.height * 0.6);
-    trianglePath.moveTo(size.width * 0.14, size.height * 0.6);
-    trianglePath.lineTo(size.width * 0.21, size.height * 0.6);
-    trianglePath.moveTo(size.width * 0.28, size.height * 0.6);
-    trianglePath.lineTo(size.width * 0.35, size.height * 0.6);
-    trianglePath.moveTo(size.width * 0.42, size.height * 0.6);
-    trianglePath.lineTo(size.width * 0.49, size.height * 0.6);
-    trianglePath.moveTo(size.width * 0.56, size.height * 0.6);
-    trianglePath.lineTo(size.width * 0.63, size.height * 0.6);
-    trianglePath.moveTo(size.width * 0.70, size.height * 0.6);
-    trianglePath.lineTo(size.width * 0.77, size.height * 0.6);
-    trianglePath.moveTo(size.width * 0.84, size.height * 0.6);
-    trianglePath.lineTo(size.width * 0.91, size.height * 0.6);
-
-    final path = Path();
-    path.moveTo(
-        size.width * 0, size.height * 0.3); // Start at the left-middle point
-    var linePath1 = Path();
-    linePath1.moveTo(size.width * 0.28, size.height * 0.3);
-    if (value > 0) {
-      linePath1.lineTo(size.width * 0.63, size.height * 0.2);
-    } else if (value < 0) {
-      linePath1.lineTo(size.width * 0.63, size.height * 0.4);
-    } else {
-      linePath1.lineTo(size.width * 0.63, size.height * 0.3);
-    }
-    final center = Offset(size.width * 0.28, size.height * 0.3);
-    final Offset center1;
-    if (value > 0) {
-      center1 = Offset(size.width * 0.63, size.height * 0.2);
-    } else if (value < 0) {
-      center1 = Offset(size.width * 0.63, size.height * 0.4);
-    } else {
-      center1 = Offset(size.width * 0.63, size.height * 0.3);
-    }
-
-    final radius = size.width / 20;
-    // Draw the white circle
-    final whitePainter = Paint()
-      ..style = PaintingStyle.fill
-      ..color = Colors.blue;
-    final orangePainter = Paint()
-      ..style = PaintingStyle.fill
-      ..color = Colors.orange;
-
-    canvas.drawPath(trianglePath, tri);
-    canvas.drawPath(linePath, linePaint);
-    canvas.drawPath(linePath1, linePaint1);
-    canvas.drawCircle(center, radius, whitePainter);
-    canvas.drawCircle(center1, radius, orangePainter);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
-}
-
 class HalfCircleWidget extends StatelessWidget {
   const HalfCircleWidget({super.key});
 
@@ -350,14 +237,14 @@ class HalfCircleWidget extends StatelessWidget {
   }
 }
 
-class HalfCircleWidget1 extends StatelessWidget {
-  const HalfCircleWidget1({super.key});
+class GraphWidget extends StatelessWidget {
+  const GraphWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      painter: SecondLinePainter(0),
-      size: const Size(150, 75),
+      painter: GraphPainter(1),
+      size: const Size(200, 100),
     );
   }
 }
