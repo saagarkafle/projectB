@@ -59,12 +59,26 @@ class GraphPainter extends CustomPainter {
     gradientPath.lineTo(size.width * 0.0, size.height * 0.6);
     gradientPath.close();
 
+    var gradientPath1 = Path();
+    gradientPath1.moveTo(size.width * 0.28, size.height * 0.3);
+    gradientPath1.lineTo(size.width * 0.63, size.height * 0.2);
+    gradientPath1.lineTo(size.width * 0.65, size.height * 0.5);
+    gradientPath1.lineTo(size.width * 0.3, size.height * 0.55);
+    gradientPath1.close();
+
     var gradientPath2 = Path();
     gradientPath2.moveTo(size.width * 0.28, size.height * 0.3);
-    gradientPath2.lineTo(size.width * 0.63, size.height * 0.2);
-    gradientPath2.lineTo(size.width * 0.65, size.height * 0.5);
-    gradientPath2.lineTo(size.width * 0.3, size.height * 0.55);
+    gradientPath2.lineTo(size.width * 0.63, size.height * 0.4);
+    gradientPath2.lineTo(size.width * 0.62, size.height * 0.7);
+    gradientPath2.lineTo(size.width * 0.3, size.height * 0.7);
     gradientPath2.close();
+
+    var gradientPath3 = Path();
+    gradientPath3.moveTo(size.width * 0.28, size.height * 0.3);
+    gradientPath3.lineTo(size.width * 0.63, size.height * 0.3);
+    gradientPath3.lineTo(size.width * 0.65, size.height * 0.65);
+    gradientPath3.lineTo(size.width * 0.3, size.height * 0.65);
+    gradientPath3.close();
 
     dashedLinePath.moveTo(size.width * 0, 0);
     dashedLinePath.lineTo(size.width * 0.07, 0);
@@ -142,9 +156,15 @@ class GraphPainter extends CustomPainter {
       ..style = PaintingStyle.fill
       ..color = Colors.orange;
 
-    canvas.drawPath(dashedLinePath, dashLinePainter);
     canvas.drawPath(gradientPath, gradientPainter);
-    canvas.drawPath(gradientPath2, gradientPainter2);
+    if (value > 0) {
+      canvas.drawPath(gradientPath1, gradientPainter2);
+    } else if (value < 0) {
+      canvas.drawPath(gradientPath2, gradientPainter2);
+    } else {
+      canvas.drawPath(gradientPath3, gradientPainter2);
+    }
+    canvas.drawPath(dashedLinePath, dashLinePainter);
     canvas.drawPath(firstLinePath, firstLinePainter);
     canvas.drawPath(secondLinePath, secondLinePainter);
     canvas.drawCircle(center, radius, firstDotPainter);
