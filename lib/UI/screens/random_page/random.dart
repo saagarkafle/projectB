@@ -102,20 +102,34 @@ class DashboardPage extends StatelessWidget {
                       ],
                     ),
                     Column(
-                      children: const [
-                        Text(
+                      children: [
+                        const Text(
                           '720',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 10,
                           ),
                         ),
-                        Center(
-                          child: SizedBox(
-                            width: 250,
-                            height: 125,
-                            child: GraphWidget(),
-                          ),
+                        Stack(
+                          children: [
+                            const Center(
+                              child: SizedBox(
+                                width: 250,
+                                height: 125,
+                                child: GraphWidget(),
+                              ),
+                            ),
+                            Positioned(
+                              child: ActionButton(
+                                  title: '720',
+                                  radius: 2,
+                                  width: 35,
+                                  height: 15,
+                                  fontSize: 10,
+                                  titleColor: Colors.white,
+                                  onTap: () {}),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -243,7 +257,7 @@ class GraphWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      painter: GraphPainter(1),
+      painter: GraphPainter(4),
       size: const Size(200, 100),
     );
   }
