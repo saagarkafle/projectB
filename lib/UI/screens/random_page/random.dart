@@ -1,19 +1,26 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:whatsapp/UI/screens/random_page/slidable_widget.dart';
 
-import 'bulleted_item.dart';
 import 'action_button.dart';
 import 'bordered_button.dart';
+import 'bulleted_item.dart';
 import 'first_painter.dart';
 import 'graph_painter.dart';
 
 class DashboardPage extends StatelessWidget {
-  const DashboardPage({super.key});
+  DashboardPage({super.key});
+  final PageController _controller = PageController();
 
   @override
   Widget build(BuildContext context) {
+    const borderRadius2 = BorderRadius.only(
+      topLeft: Radius.circular(20),
+      topRight: Radius.circular(20),
+      bottomLeft: Radius.circular(20),
+    );
     return SafeArea(
       child: Scaffold(
           backgroundColor: Colors.white,
@@ -78,11 +85,10 @@ class DashboardPage extends StatelessWidget {
                   widgetList: [
                     Stack(
                       children: [
-                        const Center(
-                          child: SizedBox(
-                            width: 160,
-                            height: 80,
-                            child: CreditScoreDisplayer(),
+                        Center(
+                          child: CustomPaint(
+                            size: const Size(150, 75),
+                            painter: HalfCirclePainter(),
                           ),
                         ),
                         Center(
@@ -95,12 +101,12 @@ class DashboardPage extends StatelessWidget {
                                     color: Colors.black, fontSize: 10),
                               ),
                               Text(
-                                '810',
+                                '890',
                                 style: TextStyle(
                                     color: Colors.black, fontSize: 24),
                               ),
                               Text(
-                                '   +160',
+                                '+160',
                                 style: TextStyle(
                                     color: Colors.black, fontSize: 14),
                               ),
@@ -122,36 +128,42 @@ class DashboardPage extends StatelessWidget {
                           ),
                           Stack(
                             children: [
-                              const Center(
-                                child: SizedBox(
-                                  width: 250,
-                                  height: 125,
-                                  child: GraphWidget(),
+                              Center(
+                                child: CustomPaint(
+                                  painter: GraphPainter(1),
+                                  size: const Size(300, 150),
                                 ),
                               ),
                               Positioned(
-                                left: width * 0.35,
-                                top: height * 0.05,
+                                left: width * 0.32,
+                                top: height * 0.1,
                                 child: ActionButton(
-                                    title: '700',
-                                    radius: 2,
-                                    width: 40,
-                                    height: 15,
-                                    fontSize: 10,
-                                    titleColor: Colors.white,
-                                    onTap: () {}),
+                                  title: '700',
+                                  radius: 2,
+                                  width: 40,
+                                  height: 15,
+                                  fontSize: 10,
+                                  titleColor: Colors.white,
+                                  onTap: () {},
+                                ),
                               ),
                               Positioned(
                                 left: width * 0.54,
-                                top: height * 0.0001,
+                                //top
+                                // top: height * 0.18,
+                                // middle
+                                // top: height * 0.1,
+                                //down
+                                top: height * 0.03,
                                 child: ActionButton(
-                                    title: '720',
-                                    radius: 2,
-                                    width: 40,
-                                    height: 15,
-                                    fontSize: 10,
-                                    titleColor: Colors.white,
-                                    onTap: () {}),
+                                  title: '720',
+                                  radius: 2,
+                                  width: 40,
+                                  height: 15,
+                                  fontSize: 10,
+                                  titleColor: Colors.white,
+                                  onTap: () {},
+                                ),
                               ),
                             ],
                           ),
@@ -185,105 +197,198 @@ class DashboardPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 10),
-                Container(
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 159, 219, 227),
-                    border: Border.all(
-                      color: Colors.green,
-                      width: 1.0,
+                Stack(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 20),
+                      decoration: BoxDecoration(
+                        color: const Color(0xffebf9ff),
+                        border: Border.all(
+                          color: Colors.green,
+                          width: 1.0,
+                        ),
+                        borderRadius: borderRadius2,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: SizedBox(
+                          height: 150,
+                          child: PageView.builder(
+                            controller: _controller,
+                            itemBuilder: (context, index) {
+                              return Row(
+                                children: [
+                                  Expanded(
+                                    flex: 5,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const Text(
+                                          'Axis Bank',
+                                          style: TextStyle(
+                                            color:
+                                                Color.fromARGB(255, 8, 41, 9),
+                                          ),
+                                        ),
+                                        const Text(
+                                          'Flipkart Credit Card',
+                                          style: TextStyle(
+                                            color:
+                                                Color.fromARGB(255, 8, 41, 9),
+                                          ),
+                                        ),
+                                        const BulletedTextItem(
+                                          text: '1.5% cashback on all spends',
+                                        ),
+                                        const BulletedTextItem(
+                                          text:
+                                              '4 complimentry lounge acce ask hlakjshak shkja kl ss',
+                                        ),
+                                        const SizedBox(height: 12),
+                                        ActionButton(
+                                          title: 'Apply Now',
+                                          radius: 6,
+                                          width: 100,
+                                          height: 28,
+                                          fontSize: 12,
+                                          titleColor: Colors.white,
+                                          onTap: () {},
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  const Expanded(
+                                    flex: 3,
+                                    child: Text(
+                                      'Image will be here',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              );
+                            },
+                          ),
+                        ),
+                      ),
                     ),
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20),
-                      bottomLeft: Radius.circular(20),
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          top: 8,
+                          right: 15,
+                        ),
+                        child: Container(
+                          padding: const EdgeInsets.all(4),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black),
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(10),
+                            ),
+                          ),
+                          child: SmoothPageIndicator(
+                            onDotClicked: (index) {},
+                            controller: _controller,
+                            count: 3,
+                            effect: const WormEffect(
+                              activeDotColor: Colors.white,
+                              dotColor: Colors.black,
+                              dotHeight: 8,
+                              type: WormType.thinUnderground,
+                              dotWidth: 8,
+                              spacing: 2,
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          flex: 9,
+                  ],
+                ),
+                IntrinsicHeight(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: borderRadius2,
+                            border: Border.all(color: const Color(0xffebb7df)),
+                            color: const Color(0xfffef9fd),
+                          ),
+                          // height: MediaQuery.of(context).size.height / 2.6,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: const [
+                                Text(
+                                  "Get Personal Loan",
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: const Color(0xff7f72f4),
+                            ),
+                            borderRadius: borderRadius2,
+                            color: const Color(0xfff0f0fa),
+                          ),
+                          // height: MediaQuery.of(context).size.height / 3.4,
                           child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text(
-                                  'Axis Bank',
-                                  style: TextStyle(
-                                    color: Color.fromARGB(255, 8, 41, 9),
-                                  ),
-                                ),
-                                const Text(
-                                  'Flipkart Credit Card',
-                                  style: TextStyle(
-                                    color: Color.fromARGB(255, 8, 41, 9),
-                                  ),
-                                ),
-                                const BulletedTextItem(
-                                  text: '1.5% cashback on all spends',
-                                ),
-                                const BulletedTextItem(
-                                  text: '4 complimentry lounge access',
-                                ),
-                                const SizedBox(height: 12),
-                                ActionButton(
-                                    title: 'Apply Now',
-                                    radius: 6,
-                                    width: 100,
-                                    height: 28,
-                                    fontSize: 12,
-                                    titleColor: Colors.white,
-                                    onTap: () {})
-                              ]),
-                        ),
-                        Expanded(
-                          flex: 6,
-                          child: Column(children: const [
-                            Text(
-                              'Image will',
-                              style: TextStyle(
-                                color: Colors.black,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: const [
+                              Text(
+                                "Get Personal Loan",
+                                style: TextStyle(color: Colors.black),
                               ),
-                            ),
-                            Text(
-                              'Be here',
-                              style: TextStyle(
-                                color: Colors.black,
+                              Text(
+                                "Get Personal Loan",
+                                style: TextStyle(color: Colors.black),
                               ),
-                            ),
-                          ]),
+                              Text(
+                                "Get Personal Loan",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                              Text(
+                                "Get Personal Loan",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                              Text(
+                                "Get Personal Loan",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                              Text(
+                                "Get Personal Loan",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                              Text(
+                                "Get Personal Loan",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                              Text(
+                                "Get Personal Loan",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                            ],
+                          ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
           )),
-    );
-  }
-}
-
-class CreditScoreDisplayer extends StatelessWidget {
-  const CreditScoreDisplayer({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: HalfCirclePainter(),
-      size: const Size(300, 150),
-    );
-  }
-}
-
-class GraphWidget extends StatelessWidget {
-  const GraphWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: GraphPainter(0),
-      size: const Size(300, 150),
     );
   }
 }

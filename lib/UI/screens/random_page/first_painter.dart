@@ -15,30 +15,29 @@ class HalfCirclePainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..shader = const LinearGradient(
         colors: [
-          Colors.orange,
-          Colors.purple,
-          Colors.green,
-          Colors.blue,
+          Color(0xffF3AA85),
+          Color(0xffC1C4F4),
+          Color(0xffA3D6CF),
+          Color(0xff75B4F1),
+          Color(0xff9CE2F5),
         ],
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
-      ).createShader(Rect.fromCircle(
-        center: Offset(size.width / 3, size.height / 2),
-        radius: size.width / 2,
-      ));
+      ).createShader(Rect.fromPoints(
+          Offset(0, size.height * 0.5), Offset(size.width, size.height * 0.5)));
     // Draw blue white gradient
     final gradientPainter = Paint()
       ..style = PaintingStyle.fill
-      ..shader = const LinearGradient(
+      ..shader = LinearGradient(
         colors: [
-          Colors.transparent,
-          Color.fromARGB(255, 84, 166, 237),
+          const Color(0xffA9D3D6).withOpacity(0.50),
+          const Color(0xff92D7F5).withOpacity(0.05),
         ],
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
       ).createShader(Rect.fromCircle(
         center: Offset(size.width / 3, size.height / 2),
-        radius: size.width / 2,
+        radius: size.width,
       ));
 
     final center = Offset(size.width / 2, size.height / 2);
