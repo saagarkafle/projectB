@@ -1,8 +1,10 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -45,7 +47,14 @@ void main() async {
   runApp(
     ModularApp(
       module: AppModule(),
-      child: const ProviderScope(child: App()),
+      child: const ProviderScope(
+        child:
+            //  DevicePreview(
+            //   enabled: !kReleaseMode,
+            //   builder: (context) =>
+            App(), // Wrap your app
+        // ),
+      ),
     ),
   );
 }

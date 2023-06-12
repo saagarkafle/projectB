@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:whatsapp/UI/screens/random_page/slidable_widget.dart';
 
@@ -70,7 +72,7 @@ class DashboardPage extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 20),
                 SlideableWidget(
                   widgetHeight: 200,
                   widgetList: [
@@ -80,62 +82,85 @@ class DashboardPage extends StatelessWidget {
                           child: SizedBox(
                             width: 160,
                             height: 80,
-                            child: HalfCircleWidget(),
+                            child: CreditScoreDisplayer(),
                           ),
                         ),
                         Center(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: const [
-                              Text('Credit Score',
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 10)),
-                              Text('810',
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 24)),
-                              Text('   +160',
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 14)),
+                              Text(
+                                'Credit Score',
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 10),
+                              ),
+                              Text(
+                                '810',
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 24),
+                              ),
+                              Text(
+                                '   +160',
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 14),
+                              ),
                             ],
                           ),
                         ),
                       ],
                     ),
-                    Column(
-                      children: [
-                        const Text(
-                          '720',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 10,
+                    LayoutBuilder(builder:
+                        (BuildContext context, BoxConstraints constraints) {
+                      final double width = constraints.maxWidth;
+                      final double height = constraints.maxHeight;
+                      log(width.toString());
+                      log(height.toString());
+                      return Column(
+                        children: [
+                          const SizedBox(
+                            height: 40,
                           ),
-                        ),
-                        Stack(
-                          children: [
-                            const Center(
-                              child: SizedBox(
-                                width: 250,
-                                height: 125,
-                                child: GraphWidget(),
+                          Stack(
+                            children: [
+                              const Center(
+                                child: SizedBox(
+                                  width: 250,
+                                  height: 125,
+                                  child: GraphWidget(),
+                                ),
                               ),
-                            ),
-                            Positioned(
-                              child: ActionButton(
-                                  title: '720',
-                                  radius: 2,
-                                  width: 35,
-                                  height: 15,
-                                  fontSize: 10,
-                                  titleColor: Colors.white,
-                                  onTap: () {}),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                              Positioned(
+                                left: width * 0.35,
+                                top: height * 0.05,
+                                child: ActionButton(
+                                    title: '700',
+                                    radius: 2,
+                                    width: 40,
+                                    height: 15,
+                                    fontSize: 10,
+                                    titleColor: Colors.white,
+                                    onTap: () {}),
+                              ),
+                              Positioned(
+                                left: width * 0.54,
+                                top: height * 0.0001,
+                                child: ActionButton(
+                                    title: '720',
+                                    radius: 2,
+                                    width: 40,
+                                    height: 15,
+                                    fontSize: 10,
+                                    titleColor: Colors.white,
+                                    onTap: () {}),
+                              ),
+                            ],
+                          ),
+                        ],
+                      );
+                    })
                   ],
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
@@ -239,14 +264,14 @@ class DashboardPage extends StatelessWidget {
   }
 }
 
-class HalfCircleWidget extends StatelessWidget {
-  const HalfCircleWidget({super.key});
+class CreditScoreDisplayer extends StatelessWidget {
+  const CreditScoreDisplayer({super.key});
 
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
       painter: HalfCirclePainter(),
-      size: const Size(150, 75),
+      size: const Size(300, 150),
     );
   }
 }
@@ -257,8 +282,8 @@ class GraphWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      painter: GraphPainter(4),
-      size: const Size(200, 100),
+      painter: GraphPainter(0),
+      size: const Size(300, 150),
     );
   }
 }

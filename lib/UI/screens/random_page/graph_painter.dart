@@ -20,8 +20,8 @@ class GraphPainter extends CustomPainter {
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
       ).createShader(Rect.fromPoints(
-          Offset(size.width * 0.28, size.height * 0.3),
-          Offset(size.width * 0.28, size.height * 0.6)));
+          Offset(size.width * 0.35, size.height * 0.3),
+          Offset(size.width * 0.35, size.height * 0.6)));
     final gradientPainter2 = Paint()
       ..style = PaintingStyle.fill
       ..shader = const LinearGradient(
@@ -32,8 +32,8 @@ class GraphPainter extends CustomPainter {
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
       ).createShader(Rect.fromPoints(
-          Offset(size.width * 0.28, size.height * 0.3),
-          Offset(size.width * 0.28, size.height * 0.6)));
+          Offset(size.width * 0.35, size.height * 0.3),
+          Offset(size.width * 0.35, size.height * 0.6)));
 
     final firstLinePainter = Paint()
       ..color = Colors.blue
@@ -48,43 +48,43 @@ class GraphPainter extends CustomPainter {
 
     var firstLinePath = Path();
     firstLinePath.moveTo(size.width * 0, size.height * 0.3);
-    firstLinePath.lineTo(size.width * 0.28, size.height * 0.3);
+    firstLinePath.lineTo(size.width * 0.35, size.height * 0.3);
 
     //
     var dashedLinePath = Path();
     var gradientPath = Path();
     gradientPath.moveTo(size.width * 0, size.height * 0.3);
-    gradientPath.lineTo(size.width * 0.28, size.height * 0.3);
-    gradientPath.lineTo(size.width * 0.28, size.height * 0.6);
+    gradientPath.lineTo(size.width * 0.35, size.height * 0.3);
+    gradientPath.lineTo(size.width * 0.35, size.height * 0.6);
     gradientPath.lineTo(size.width * 0.0, size.height * 0.6);
     gradientPath.close();
 
     var gradientPath1 = Path();
-    gradientPath1.moveTo(size.width * 0.28, size.height * 0.3);
+    gradientPath1.moveTo(size.width * 0.35, size.height * 0.3);
     gradientPath1.lineTo(size.width * 0.63, size.height * 0.2);
-    gradientPath1.lineTo(size.width * 0.65, size.height * 0.5);
-    gradientPath1.lineTo(size.width * 0.3, size.height * 0.55);
+    gradientPath1.lineTo(size.width * 0.63, size.height * 0.5);
+    gradientPath1.lineTo(size.width * 0.27, size.height * 0.6);
     gradientPath1.close();
 
     var gradientPath2 = Path();
-    gradientPath2.moveTo(size.width * 0.28, size.height * 0.3);
+    gradientPath2.moveTo(size.width * 0.35, size.height * 0.3);
     gradientPath2.lineTo(size.width * 0.63, size.height * 0.4);
-    gradientPath2.lineTo(size.width * 0.62, size.height * 0.7);
-    gradientPath2.lineTo(size.width * 0.3, size.height * 0.7);
+    gradientPath2.lineTo(size.width * 0.63, size.height * 0.6);
+    gradientPath2.lineTo(size.width * 0.27, size.height * 0.6);
     gradientPath2.close();
 
     var gradientPath3 = Path();
-    gradientPath3.moveTo(size.width * 0.28, size.height * 0.3);
+    gradientPath3.moveTo(size.width * 0.35, size.height * 0.3);
     gradientPath3.lineTo(size.width * 0.63, size.height * 0.3);
-    gradientPath3.lineTo(size.width * 0.65, size.height * 0.65);
-    gradientPath3.lineTo(size.width * 0.3, size.height * 0.65);
+    gradientPath3.lineTo(size.width * 0.63, size.height * 0.6);
+    gradientPath3.lineTo(size.width * 0.27, size.height * 0.6);
     gradientPath3.close();
 
     dashedLinePath.moveTo(size.width * 0, 0);
     dashedLinePath.lineTo(size.width * 0.07, 0);
     dashedLinePath.moveTo(size.width * 0.14, 0);
     dashedLinePath.lineTo(size.width * 0.21, 0);
-    dashedLinePath.moveTo(size.width * 0.28, 0);
+    dashedLinePath.moveTo(size.width * 0.35, 0);
     dashedLinePath.lineTo(size.width * 0.35, 0);
     dashedLinePath.moveTo(size.width * 0.42, 0);
     dashedLinePath.lineTo(size.width * 0.49, 0);
@@ -99,7 +99,7 @@ class GraphPainter extends CustomPainter {
     dashedLinePath.lineTo(size.width * 0.07, size.height * 0.3);
     dashedLinePath.moveTo(size.width * 0.14, size.height * 0.3);
     dashedLinePath.lineTo(size.width * 0.21, size.height * 0.3);
-    dashedLinePath.moveTo(size.width * 0.28, size.height * 0.3);
+    dashedLinePath.moveTo(size.width * 0.35, size.height * 0.3);
     dashedLinePath.lineTo(size.width * 0.35, size.height * 0.3);
     dashedLinePath.moveTo(size.width * 0.42, size.height * 0.3);
     dashedLinePath.lineTo(size.width * 0.49, size.height * 0.3);
@@ -114,7 +114,7 @@ class GraphPainter extends CustomPainter {
     dashedLinePath.lineTo(size.width * 0.07, size.height * 0.6);
     dashedLinePath.moveTo(size.width * 0.14, size.height * 0.6);
     dashedLinePath.lineTo(size.width * 0.21, size.height * 0.6);
-    dashedLinePath.moveTo(size.width * 0.28, size.height * 0.6);
+    dashedLinePath.moveTo(size.width * 0.35, size.height * 0.6);
     dashedLinePath.lineTo(size.width * 0.35, size.height * 0.6);
     dashedLinePath.moveTo(size.width * 0.42, size.height * 0.6);
     dashedLinePath.lineTo(size.width * 0.49, size.height * 0.6);
@@ -125,11 +125,51 @@ class GraphPainter extends CustomPainter {
     dashedLinePath.moveTo(size.width * 0.84, size.height * 0.6);
     dashedLinePath.lineTo(size.width * 0.91, size.height * 0.6);
 
+    //////////////////////////////////////
+    ///
+    // final rect = Rect.fromLTRB(0, 0, size.width / 9, size.height / 9);
+    // const radiusx = Radius.circular(4.0);
+    // final paint = Paint()
+    //   ..color = Colors.blue
+    //   ..style = PaintingStyle.fill;
+
+    // final pathx = Path()
+    //   ..moveTo(rect.left + radiusx.x, rect.top * 0.27)
+    //   ..lineTo(rect.right - radiusx.x, rect.top)
+    //   ..arcToPoint(
+    //     Offset(rect.right, rect.top + radiusx.y),
+    //     radius: radiusx,
+    //     clockwise: true,
+    //   )
+    //   ..lineTo(rect.right, rect.bottom - radiusx.y)
+    //   ..arcToPoint(
+    //     Offset(rect.right - radiusx.x, rect.bottom),
+    //     radius: radiusx,
+    //     clockwise: true,
+    //   )
+    //   ..lineTo(rect.left + radiusx.x, rect.bottom)
+    //   ..arcToPoint(
+    //     Offset(rect.left, rect.bottom - radiusx.y),
+    //     radius: radiusx,
+    //     clockwise: true,
+    //   )
+    //   ..lineTo(rect.left, rect.top + radiusx.y)
+    //   ..arcToPoint(
+    //     Offset(rect.left + radiusx.x, rect.top),
+    //     radius: radiusx,
+    //     clockwise: true,
+    //   );
+
+    // canvas.drawPath(pathx, paint);
+
+    ///
+    /////////////////////////////////////
+
     final path = Path();
     path.moveTo(
         size.width * 0, size.height * 0.3); // Start at the left-middle point
     var secondLinePath = Path();
-    secondLinePath.moveTo(size.width * 0.28, size.height * 0.3);
+    secondLinePath.moveTo(size.width * 0.35, size.height * 0.3);
     if (value > 0) {
       secondLinePath.lineTo(size.width * 0.63, size.height * 0.2);
     } else if (value < 0) {
@@ -137,7 +177,7 @@ class GraphPainter extends CustomPainter {
     } else {
       secondLinePath.lineTo(size.width * 0.63, size.height * 0.3);
     }
-    final center = Offset(size.width * 0.28, size.height * 0.3);
+    final center = Offset(size.width * 0.35, size.height * 0.3);
     final Offset center1;
     if (value > 0) {
       center1 = Offset(size.width * 0.63, size.height * 0.2);
