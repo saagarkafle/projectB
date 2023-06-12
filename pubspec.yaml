@@ -52,7 +52,8 @@ dependencies:
   on_audio_query: ^2.6.2
   reflective_visual: ^0.0.21
   shimmer: ^2.0.0
-  syncfusion_flutter_charts: ^21.2.6
+  # syncfusion_flutter_charts: ^21.2.6
+  device_preview: ^1.1.0
 
 dev_dependencies:
   flutter_launcher_icons: ^0.12.0
