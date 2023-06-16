@@ -134,6 +134,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                         title: 'Loading',
                         onPressed: () => Modular.to.pushNamed('/loading')),
                     CustomCard(
+                        title: 'Khalti',
+                        onPressed: () => Modular.to.pushNamed('/khalti')),
+                    CustomCard(
                         title: 'Flip Card',
                         onPressed: () => Modular.to.pushNamed('/flip')),
                     CustomCard(

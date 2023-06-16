@@ -53,13 +53,6 @@ class StartState extends State<SplashScreen> {
             color: AppColors.whiteColor,
           ),
         )
-        // Positioned(
-        //     top: SizeConfig.screenHeight / 1.3,
-        //     left: SizeConfig.screenWidth / 2.7,
-        //     child: const SizedBox(
-        //       height: 120,
-        //       child: LoadingPage(),
-        //     ))
       ],
     );
   }
