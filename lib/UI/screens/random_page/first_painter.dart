@@ -52,7 +52,7 @@ class HalfCirclePainter extends CustomPainter {
     // Draw the white circle
     final whitePainter = Paint()
       ..style = PaintingStyle.fill
-      ..color = Color.fromARGB(255, 48, 19, 19);
+      ..color = const Color.fromARGB(255, 48, 19, 19);
 
     // Draw the black triangle
     var trianglePath = Path();

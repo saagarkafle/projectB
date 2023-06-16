@@ -55,7 +55,6 @@ class _LocationTrackerState extends State<LocationTracker> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 

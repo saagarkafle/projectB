@@ -25,7 +25,6 @@ class _HomePageState extends ConsumerState<HomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     subscribeTopic();
   }
@@ -91,6 +90,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                     CustomCard(
                         title: 'Anim',
                         onPressed: () => Modular.to.pushNamed('/anim')),
+                    CustomCard(
+                        title: 'Print',
+                        onPressed: () => Modular.to.pushNamed('/print')),
                     CustomCard(
                         title: 'Shimmer Effect',
                         onPressed: () => Modular.to.pushNamed('/third')),

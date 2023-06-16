@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import '../../../../constants/colours.dart';
 
 class FlipCard extends StatelessWidget {
-  Matrix4 transform;
-  double? size, borderWidth;
-  Color? color;
-  FlipCard(
+  final Matrix4 transform;
+  final double? size, borderWidth;
+  final Color? color;
+  const FlipCard(
       {Key? key,
       required this.transform,
       this.size,
@@ -34,7 +34,7 @@ class FlipCard extends StatelessWidget {
                     spreadRadius: 5,
                     blurRadius: 7,
                     offset: const Offset(0, 3))
-              ])),
+              ]),),
     );
   }
 }
