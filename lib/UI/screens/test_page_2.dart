@@ -84,9 +84,7 @@ class _TestPage2State extends State<TestPage2> {
                   ),
                 ],
                 isRepeatingAnimation: true,
-                onTap: () {
-                  print("Tap Event");
-                },
+                onTap: () {},
               ),
             ),
             SizedBox(
@@ -102,9 +100,7 @@ class _TestPage2State extends State<TestPage2> {
                     ScaleAnimatedText('Build'),
                     ScaleAnimatedText('Ship'),
                   ],
-                  onTap: () {
-                    print("Tap Event");
-                  },
+                  onTap: () {},
                 ),
               ),
             ),
@@ -118,9 +114,7 @@ class _TestPage2State extends State<TestPage2> {
                   WavyAnimatedText('Look at the waves'),
                 ],
                 isRepeatingAnimation: true,
-                onTap: () {
-                  print("Tap Event");
-                },
+                onTap: () {},
               ),
             ),
             SizedBox(
@@ -136,9 +130,7 @@ class _TestPage2State extends State<TestPage2> {
                     FadeAnimatedText('do it RIGHT!!'),
                     FadeAnimatedText('do it RIGHT NOW!!!'),
                   ],
-                  onTap: () {
-                    print("Tap Event");
-                  },
+                  onTap: () {},
                 ),
               ),
             ),
