@@ -6,16 +6,21 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'package:khalti_flutter/khalti_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:whatsapp/UI/screens/khalti/khalti.dart';
 
-import 'UI/screens/theme/theme_colors.dart';
-import 'UI/screens/theme/theme_provider.dart';
 import 'UI/screens/theme/typo.dart';
 import 'models/notification_model.dart';
+import 'UI/screens/theme/theme_colors.dart';
+import 'UI/screens/theme/theme_provider.dart';
 
 import 'app.dart';
+
+const String testPublicKey = 'test_public_key_dc74e0fd57cb46cd93832aee0a507256';
+GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
@@ -45,19 +50,17 @@ void main() async {
     badge: true,
     sound: true,
   );
-  runApp(
-    ModularApp(
-      module: AppModule(),
-      child: const ProviderScope(
-        child:
-            //  DevicePreview(
-            //   enabled: !kReleaseMode,
-            //   builder: (context) =>
-            App(), // Wrap your app
-        // ),
-      ),
+  runApp(ModularApp(
+    module: AppModule(),
+    child: const ProviderScope(
+      child:
+          //  DevicePreview(
+          //   enabled: !kReleaseMode,
+          //   builder: (context) =>
+          App(), // Wrap your app
+      // ),
     ),
-  );
+  ));
 }
 
 const AndroidNotificationChannel channel = AndroidNotificationChannel(
@@ -87,31 +90,41 @@ class _AppState extends ConsumerState<App> {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
-          return GestureDetector(
-            // this will remove keyword when clicked outside
-            onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-            child: MaterialApp.router(
-              // this is used for default theme mode
-              // darkTheme: ThemeClass.darkTheme,
-              // theme: ThemeClass.lightTheme,
-
-              theme: ThemeData(
-                useMaterial3: true,
-                colorScheme: lightColorScheme,
-                textTheme: textTheme,
-              ),
-              darkTheme: ThemeData(
-                useMaterial3: true,
-                colorScheme: darkColorScheme,
-                textTheme: textTheme,
-              ),
-              themeMode: themeMode,
-              title: 'Flutter Demo',
-              debugShowCheckedModeBanner: false,
-              routeInformationParser: Modular.routeInformationParser,
-              routerDelegate: Modular.routerDelegate,
-            ),
-          );
+          return KhaltiScope(
+              publicKey: testPublicKey,
+              enabledDebugging: true,
+              // navigatorKey: navigatorKey,
+              builder: (_, navKey) {
+                return MaterialApp(
+                  navigatorKey: navKey,
+                  supportedLocales: const [
+                    Locale('en', 'US'),
+                    Locale('ne', 'NP'),
+                  ],
+                  // this is used for default theme mode
+                  // darkTheme: ThemeClass.darkTheme,
+                  // theme: ThemeClass.lightTheme,
+                  localizationsDelegates: const [
+                    KhaltiLocalizations.delegate,
+                  ],
+                  theme: ThemeData(
+                    useMaterial3: true,
+                    colorScheme: lightColorScheme,
+                    textTheme: textTheme,
+                  ),
+                  darkTheme: ThemeData(
+                    useMaterial3: true,
+                    colorScheme: darkColorScheme,
+                    textTheme: textTheme,
+                  ),
+                  home: const KhaltiPaymentPage(),
+                  themeMode: themeMode,
+                  title: 'Flutter Demo',
+                  debugShowCheckedModeBanner: false,
+                  // routeInformationParser: Modular.routeInformationParser,
+                  // routerDelegate: Modular.routerDelegate,
+                );
+              });
         });
   }
 }
