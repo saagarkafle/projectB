@@ -9,6 +9,7 @@ import 'UI/screens/animation_screens/hero_animation.dart';
 import 'UI/screens/charts/chart.dart';
 import 'UI/screens/nav_bar/pages/buttom_navigtion.dart';
 // import 'UI/screens/random_number/random.dart';
+import 'UI/screens/printing/bluetooth_print.dart';
 import 'UI/screens/random_page/random.dart';
 import 'UI/screens/tabbar/tabbar.dart';
 import 'UI/screens/test_page.dart';
@@ -119,6 +120,10 @@ class AppModule extends Module {
             duration: const Duration(milliseconds: 600)),
         ChildRoute('/calculator',
             child: (context, args) => const Calculator(),
+            transition: TransitionType.fadeIn,
+            duration: const Duration(milliseconds: 600)),
+        ChildRoute('/print',
+            child: (context, args) => BluetoothScreen(),
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
         ChildRoute('/counter',

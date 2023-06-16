@@ -54,6 +54,7 @@ dependencies:
   reflective_visual: ^0.0.21
   shimmer: ^2.0.0
   smooth_page_indicator: ^1.1.0
+  bluetooth_print: ^4.3.0
 
 dev_dependencies:
   flutter_launcher_icons: ^0.12.0
