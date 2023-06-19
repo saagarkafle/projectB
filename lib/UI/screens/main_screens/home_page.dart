@@ -74,11 +74,11 @@ class _HomePageState extends ConsumerState<HomePage> {
                   runSpacing: 10.h,
                   crossAxisAlignment: WrapCrossAlignment.start,
                   children: [
-                    CustomCard(
-                        title: 'Test',
-                        onPressed: () {
-                          Modular.to.pushNamed('/test');
-                        }),
+                    // CustomCard(
+                    //     title: 'Test',
+                    //     onPressed: () {
+                    //       Modular.to.pushNamed('/test');
+                    //     }),
                     CustomCard(
                         title: 'Test 2',
                         onPressed: () {

@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:whatsapp/UI/screens/random_page/slidable_widget.dart';
+import 'package:whatsapp/UI/screens/sabin_dai/slidable_widget.dart';
 
 import 'action_button.dart';
 import 'bordered_button.dart';

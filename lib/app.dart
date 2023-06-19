@@ -11,7 +11,7 @@ import 'UI/screens/khalti/khalti_payment.dart';
 import 'UI/screens/nav_bar/pages/buttom_navigtion.dart';
 // import 'UI/screens/random_number/random.dart';
 import 'UI/screens/printing/bluetooth_print.dart';
-import 'UI/screens/random_page/random.dart';
+import 'UI/screens/sabin_dai/random.dart';
 import 'UI/screens/tabbar/tabbar.dart';
 import 'UI/screens/test_page.dart';
 import 'UI/screens/test_page_2.dart';
