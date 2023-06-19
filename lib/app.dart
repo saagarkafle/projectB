@@ -7,7 +7,7 @@ import 'package:whatsapp/UI/screens/nav_bar/nav_bar.dart';
 
 import 'UI/screens/animation_screens/hero_animation.dart';
 import 'UI/screens/charts/chart.dart';
-import 'UI/screens/khalti/khalti.dart';
+import 'UI/screens/khalti/khalti_payment.dart';
 import 'UI/screens/nav_bar/pages/buttom_navigtion.dart';
 // import 'UI/screens/random_number/random.dart';
 import 'UI/screens/printing/bluetooth_print.dart';

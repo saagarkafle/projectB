@@ -10,8 +10,8 @@ import 'package:khalti_flutter/khalti_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:whatsapp/UI/screens/khalti/khalti.dart';
 
+import 'UI/screens/main_screens/splash_screen.dart';
 import 'UI/screens/theme/typo.dart';
 import 'models/notification_model.dart';
 import 'UI/screens/theme/theme_colors.dart';
@@ -117,7 +117,7 @@ class _AppState extends ConsumerState<App> {
                     colorScheme: darkColorScheme,
                     textTheme: textTheme,
                   ),
-                  home: const KhaltiPaymentPage(),
+                  home: const SplashScreen(),
                   themeMode: themeMode,
                   title: 'Flutter Demo',
                   debugShowCheckedModeBanner: false,
