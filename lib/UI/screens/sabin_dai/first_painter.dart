@@ -24,7 +24,7 @@ class HalfCirclePainter extends CustomPainter {
     // Draw the black triangle
     var trianglePath = Path();
     trianglePath.moveTo(size.width / 1.4, size.height * 0.15);
-    trianglePath.lineTo(size.width * 0.87, size.height / 5.04);
+    trianglePath.lineTo(size.width * 0.864, size.height / 5.35);
     trianglePath.lineTo(size.width / 1.25, size.height * 0.5);
     trianglePath.close();
 
@@ -57,8 +57,8 @@ class GradientPainter extends CustomPainter {
       ..style = PaintingStyle.fill
       ..shader = const LinearGradient(
         colors: [
-          Colors.transparent,
-          Color.fromARGB(255, 84, 166, 237),
+          Color(0xb2a9d3d6),
+          Color(0x1792D7F5),
         ],
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,

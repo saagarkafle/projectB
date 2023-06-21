@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:whatsapp/UI/screens/sabin_dai/slidable_widget.dart';
-import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 
 import 'action_button.dart';
 import 'bordered_button.dart';
@@ -24,8 +25,8 @@ class _DashboardPageState extends State<DashboardPage>
   @override
   void initState() {
     super.initState();
-    _controller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    _controller = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 1000));
     _animation = Tween<double>(begin: -180, end: 0).animate(_controller);
     _controller.forward();
   }
@@ -106,41 +107,16 @@ class _DashboardPageState extends State<DashboardPage>
                 ),
                 const SizedBox(height: 20),
                 SlideableWidget(
-                  widgetHeight: 200,
+                  widgetHeight: 210,
                   widgetList: [
                     Stack(
                       children: [
                         Center(
-                          child: SleekCircularSlider(
-                            min: 0,
-                            max: 1000,
-                            initialValue: 720,
-                            appearance: CircularSliderAppearance(
-                                customColors: CustomSliderColors(
-                                  trackColor: Colors.transparent,
-                                ),
-                                startAngle: 160,
-                                customWidths: CustomSliderWidths(
-                                    trackWidth: 0,
-                                    progressBarWidth: 8,
-                                    handlerSize: 0),
-                                animationEnabled: true,
-                                spinnerMode: false,
-                                infoProperties: InfoProperties(
-                                    mainLabelStyle: const TextStyle(
-                                  fontSize: 0,
-                                ))),
-                          ),
-                        ),
-                        //
-
-                        Center(
                           child: CustomPaint(
-                            size: const Size(150, 75),
+                            size: const Size(200, 100),
                             painter: GradientPainter(),
                           ),
                         ),
-
                         Center(
                           child: AnimatedBuilder(
                               animation: _animation,
@@ -148,7 +124,7 @@ class _DashboardPageState extends State<DashboardPage>
                                 return Transform.rotate(
                                   angle: degreeToRadian(_animation.value),
                                   child: CustomPaint(
-                                    size: const Size(150, 75),
+                                    size: const Size(200, 100),
                                     painter: HalfCirclePainter(),
                                   ),
                                 );
@@ -158,23 +134,26 @@ class _DashboardPageState extends State<DashboardPage>
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
+                            children: [
                               Text(
                                 'Credit Score',
-                                style: TextStyle(
-                                    color: Color(0xff84b8ca),
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600),
+                                style: GoogleFonts.roboto(
+                                  fontSize: 12,
+                                  color: const Color(0xff84b8ca),
+                                  fontWeight: FontWeight.w800,
+                                ),
                               ),
+                              const SizedBox(height: 5),
                               Text(
-                                '890',
-                                style: TextStyle(
-                                    height: 1,
-                                    color: Colors.black,
-                                    fontSize: 40,
-                                    fontWeight: FontWeight.w800),
+                                '810',
+                                style: GoogleFonts.montserrat(
+                                  fontSize: 40,
+                                  height: 1,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w800,
+                                ),
                               ),
-                              Text(
+                              const Text(
                                 '+160',
                                 style: TextStyle(
                                     color: Color(0xff178BAF),
@@ -184,19 +163,49 @@ class _DashboardPageState extends State<DashboardPage>
                             ],
                           ),
                         ),
+                        Center(
+                          child: SleekCircularSlider(
+                            min: 0,
+                            max: 1000,
+                            initialValue: 725,
+                            appearance: CircularSliderAppearance(
+                              customColors: CustomSliderColors(
+                                shadowMaxOpacity: 0,
+                                progressBarColors: [
+                                  const Color(0xff75B4F1),
+                                  const Color(0xff75B4F1),
+                                  const Color(0xff9CE2F5),
+                                  const Color(0xffA3D6CF),
+                                  const Color(0xffC1C4F4),
+                                  const Color(0xffF3AA85),
+                                ],
+                                trackColor: Colors.transparent,
+                              ),
+                              startAngle: 160,
+                              customWidths: CustomSliderWidths(
+                                  trackWidth: 0,
+                                  progressBarWidth: 10,
+                                  handlerSize: 0),
+                              animationEnabled: true,
+                              size: 200,
+                              spinnerMode: false,
+                              infoProperties: InfoProperties(
+                                mainLabelStyle: const TextStyle(
+                                  fontSize: 0,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                     LayoutBuilder(builder:
                         (BuildContext context, BoxConstraints constraints) {
                       final double width = constraints.maxWidth;
                       final double height = constraints.maxHeight;
-                      // log(width.toString());
-                      // log(height.toString());
                       return Column(
                         children: [
-                          const SizedBox(
-                            height: 40,
-                          ),
+                          const SizedBox(height: 40),
                           Stack(
                             children: [
                               Center(
