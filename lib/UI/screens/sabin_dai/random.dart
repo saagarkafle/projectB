@@ -1,8 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:whatsapp/UI/screens/sabin_dai/slidable_widget.dart';
+import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 
 import 'action_button.dart';
 import 'bordered_button.dart';
@@ -10,9 +9,32 @@ import 'bulleted_item.dart';
 import 'first_painter.dart';
 import 'graph_painter.dart';
 
-class DashboardPage extends StatelessWidget {
-  DashboardPage({super.key});
-  final PageController _controller = PageController();
+class DashboardPage extends StatefulWidget {
+  const DashboardPage({super.key});
+
+  @override
+  State<DashboardPage> createState() => _DashboardPageState();
+}
+
+class _DashboardPageState extends State<DashboardPage>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation _animation;
+  final PageController _pageController = PageController();
+  @override
+  void initState() {
+    super.initState();
+    _controller =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    _animation = Tween<double>(begin: -180, end: 0).animate(_controller);
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,24 +63,27 @@ class DashboardPage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 16),
-                    Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                          'Hello James,',
-                          style: TextStyle(
-                            color: Colors.black,
+                    GestureDetector(
+                      onTap: () => Navigator.pop(context),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            'Hello James,',
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 8),
-                        Text(
-                          "your credit score for Jan'23",
-                          style: TextStyle(
-                            color: Colors.black,
+                          SizedBox(height: 8),
+                          Text(
+                            "your credit score for Jan'23",
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     const Spacer(),
                     Stack(
@@ -86,29 +111,75 @@ class DashboardPage extends StatelessWidget {
                     Stack(
                       children: [
                         Center(
+                          child: SleekCircularSlider(
+                            min: 0,
+                            max: 1000,
+                            initialValue: 720,
+                            appearance: CircularSliderAppearance(
+                                customColors: CustomSliderColors(
+                                  trackColor: Colors.transparent,
+                                ),
+                                startAngle: 160,
+                                customWidths: CustomSliderWidths(
+                                    trackWidth: 0,
+                                    progressBarWidth: 8,
+                                    handlerSize: 0),
+                                animationEnabled: true,
+                                spinnerMode: false,
+                                infoProperties: InfoProperties(
+                                    mainLabelStyle: const TextStyle(
+                                  fontSize: 0,
+                                ))),
+                          ),
+                        ),
+                        //
+
+                        Center(
                           child: CustomPaint(
                             size: const Size(150, 75),
-                            painter: HalfCirclePainter(),
+                            painter: GradientPainter(),
                           ),
+                        ),
+
+                        Center(
+                          child: AnimatedBuilder(
+                              animation: _animation,
+                              builder: (context, child) {
+                                return Transform.rotate(
+                                  angle: degreeToRadian(_animation.value),
+                                  child: CustomPaint(
+                                    size: const Size(150, 75),
+                                    painter: HalfCirclePainter(),
+                                  ),
+                                );
+                              }),
                         ),
                         Center(
                           child: Column(
+                            mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: const [
                               Text(
                                 'Credit Score',
                                 style: TextStyle(
-                                    color: Colors.black, fontSize: 10),
+                                    color: Color(0xff84b8ca),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600),
                               ),
                               Text(
                                 '890',
                                 style: TextStyle(
-                                    color: Colors.black, fontSize: 24),
+                                    height: 1,
+                                    color: Colors.black,
+                                    fontSize: 40,
+                                    fontWeight: FontWeight.w800),
                               ),
                               Text(
                                 '+160',
                                 style: TextStyle(
-                                    color: Colors.black, fontSize: 14),
+                                    color: Color(0xff178BAF),
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w600),
                               ),
                             ],
                           ),
@@ -119,8 +190,8 @@ class DashboardPage extends StatelessWidget {
                         (BuildContext context, BoxConstraints constraints) {
                       final double width = constraints.maxWidth;
                       final double height = constraints.maxHeight;
-                      log(width.toString());
-                      log(height.toString());
+                      // log(width.toString());
+                      // log(height.toString());
                       return Column(
                         children: [
                           const SizedBox(
@@ -214,7 +285,7 @@ class DashboardPage extends StatelessWidget {
                         child: SizedBox(
                           height: 150,
                           child: PageView.builder(
-                            controller: _controller,
+                            controller: _pageController,
                             itemBuilder: (context, index) {
                               return Row(
                                 children: [
@@ -291,7 +362,7 @@ class DashboardPage extends StatelessWidget {
                           ),
                           child: SmoothPageIndicator(
                             onDotClicked: (index) {},
-                            controller: _controller,
+                            controller: _pageController,
                             count: 3,
                             effect: const WormEffect(
                               activeDotColor: Colors.white,
@@ -390,5 +461,11 @@ class DashboardPage extends StatelessWidget {
             ),
           )),
     );
+  }
+
+  double pi = 3.141592653589793238;
+
+  double degreeToRadian(double degree) {
+    return degree * pi / 180;
   }
 }

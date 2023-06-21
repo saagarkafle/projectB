@@ -140,7 +140,7 @@ class AppModule extends Module {
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
         ChildRoute('/random',
-            child: (context, args) => DashboardPage(),
+            child: (context, args) => const DashboardPage(),
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
         ChildRoute('/charts',
