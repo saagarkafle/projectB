@@ -6,7 +6,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:khalti_flutter/khalti_flutter.dart';
+// import 'package:khalti_flutter/khalti_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -89,41 +89,43 @@ class _AppState extends ConsumerState<App> {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
-          return KhaltiScope(
-              publicKey: testPublicKey,
-              enabledDebugging: true,
-              // navigatorKey: navigatorKey,
-              builder: (_, navKey) {
-                return MaterialApp.router(
-                  // navigatorKey: navKey,
-                  supportedLocales: const [
-                    Locale('en', 'US'),
-                    Locale('ne', 'NP'),
-                  ],
-                  // this is used for default theme mode
-                  // darkTheme: ThemeClass.darkTheme,
-                  // theme: ThemeClass.lightTheme,
-                  localizationsDelegates: const [
-                    KhaltiLocalizations.delegate,
-                  ],
-                  theme: ThemeData(
-                    useMaterial3: true,
-                    colorScheme: lightColorScheme,
-                    textTheme: textTheme,
-                  ),
-                  darkTheme: ThemeData(
-                    useMaterial3: true,
-                    colorScheme: darkColorScheme,
-                    textTheme: textTheme,
-                  ),
-                  // home: const SplashScreen(),
-                  themeMode: themeMode,
-                  title: 'Flutter Demo',
-                  debugShowCheckedModeBanner: false,
-                  routeInformationParser: Modular.routeInformationParser,
-                  routerDelegate: Modular.routerDelegate,
-                );
-              });
-        });
+          // return KhaltiScope(
+          //     publicKey: testPublicKey,
+          //     enabledDebugging: true,
+          //     // navigatorKey: navigatorKey,
+          //     builder: (_, navKey) {
+          return MaterialApp.router(
+            // navigatorKey: navKey,
+            supportedLocales: const [
+              Locale('en', 'US'),
+              Locale('ne', 'NP'),
+            ],
+            // this is used for default theme mode
+            // darkTheme: ThemeClass.darkTheme,
+            // theme: ThemeClass.lightTheme,
+            // localizationsDelegates: const [
+            //   KhaltiLocalizations.delegate,
+            // ],
+            theme: ThemeData(
+              useMaterial3: true,
+              colorScheme: lightColorScheme,
+              textTheme: textTheme,
+            ),
+            darkTheme: ThemeData(
+              useMaterial3: true,
+              colorScheme: darkColorScheme,
+              textTheme: textTheme,
+            ),
+            // home: const SplashScreen(),
+            themeMode: themeMode,
+            title: 'Flutter Demo',
+            debugShowCheckedModeBanner: false,
+            routeInformationParser: Modular.routeInformationParser,
+            routerDelegate: Modular.routerDelegate,
+          );
+        }
+        // );
+        // }
+        );
   }
 }

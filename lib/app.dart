@@ -7,13 +7,11 @@ import 'package:whatsapp/UI/screens/nav_bar/nav_bar.dart';
 
 import 'UI/screens/animation_screens/hero_animation.dart';
 import 'UI/screens/charts/chart.dart';
-import 'UI/screens/khalti/khalti_payment.dart';
 import 'UI/screens/nav_bar/pages/buttom_navigtion.dart';
 // import 'UI/screens/random_number/random.dart';
 import 'UI/screens/printing/bluetooth_print.dart';
 import 'UI/screens/sabin_dai/random.dart';
 import 'UI/screens/tabbar/tabbar.dart';
-import 'UI/screens/test_page.dart';
 import 'UI/screens/test_page_2.dart';
 import 'UI/screens/used_package_screens/accordian.dart';
 import 'UI/screens/animation_screens/animated_icon.dart';
@@ -21,7 +19,6 @@ import 'UI/screens/used_package_screens/calculator.dart';
 import 'UI/screens/custom_paint_screens/cp2page.dart';
 import 'UI/screens/animation_screens/loading.dart';
 import 'UI/screens/used_package_screens/maps.dart';
-import 'UI/screens/music_player/music_home.dart';
 import 'UI/screens/used_package_screens/shimmer_page.dart';
 import 'UI/screens/custom_paint_screens/custom_paint.dart';
 import 'UI/screens/main_screens/splash_screen.dart';
@@ -59,10 +56,10 @@ class AppModule extends Module {
             child: (context, args) => const TweenPage(),
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
-        ChildRoute('/khalti',
-            child: (context, args) => const KhaltiPaymentPage(),
-            transition: TransitionType.fadeIn,
-            duration: const Duration(milliseconds: 600)),
+        // ChildRoute('/khalti',
+        //     child: (context, args) => const KhaltiPaymentPage(),
+        //     transition: TransitionType.fadeIn,
+        //     duration: const Duration(milliseconds: 600)),
         ChildRoute('/animatedicon',
             child: (context, args) => const AnimatedIconPage(),
             transition: TransitionType.fadeIn,
@@ -75,18 +72,14 @@ class AppModule extends Module {
             child: (context, args) => const CustomPaintPage2(),
             transition: TransitionType.fadeIn,
             duration: const Duration(milliseconds: 600)),
-        ChildRoute('/musicPlayer',
-            child: (context, args) => const AllSongs(),
-            transition: TransitionType.fadeIn,
-            duration: const Duration(milliseconds: 600)),
-        ChildRoute('/test',
-            child: (context, args) => const TestPage(),
-            transition: TransitionType.fadeIn,
-            duration: const Duration(milliseconds: 600)),
-        ChildRoute('/test2',
-            child: (context, args) => const TestPage2(),
-            transition: TransitionType.fadeIn,
-            duration: const Duration(milliseconds: 600)),
+        // ChildRoute('/musicPlayer',
+        //     child: (context, args) => const AllSongs(),
+        //     transition: TransitionType.fadeIn,
+        //     duration: const Duration(milliseconds: 600)),
+        // ChildRoute('/test',
+        //     child: (context, args) => const TestPage(),
+        //     transition: TransitionType.fadeIn,
+        //     duration: const Duration(milliseconds: 600)),
         ChildRoute('/test2',
             child: (context, args) => const TestPage2(),
             transition: TransitionType.fadeIn,
