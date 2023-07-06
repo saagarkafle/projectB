@@ -30,11 +30,10 @@ class ActionButton extends StatelessWidget {
     return InkWell(
       onTap: btnAction,
       child: Container(
-        // duration: const Duration(milliseconds: 300),
         alignment: Alignment.center,
         padding: const EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(
-          border: Border.all(color: AppColors.blackColor),
+          border: Border.all(color: AppColors.whiteColor),
           borderRadius: BorderRadius.all(
             Radius.circular(btnCurve),
           ),

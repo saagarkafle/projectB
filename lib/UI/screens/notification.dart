@@ -44,6 +44,7 @@ class _NotificationPageState extends State<NotificationPage> {
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 // EachTextField(
                 //   onChanged: (p0) {
@@ -82,7 +83,7 @@ class _NotificationPageState extends State<NotificationPage> {
                   hintText: 'Ttile',
                   maxLength: 40,
                 ),
-                const SizedBox(height: 300),
+                const SizedBox(height: 32),
                 const Text('Subtitle'),
                 const SizedBox(height: 6),
                 CustomTextField(
@@ -94,10 +95,12 @@ class _NotificationPageState extends State<NotificationPage> {
                 ),
                 const SizedBox(height: 32),
                 ActionButton(
-                    btnName: 'Send Notification',
+                    btnName: 'Okay',
                     btnCurve: 40.r,
                     btnHeight: 48.h,
                     txtFontSize: 16.sp,
+                    btnColor: Colors.white,
+                    
                     btnAction: () {})
               ],
             ),
