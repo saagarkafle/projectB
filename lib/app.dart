@@ -23,7 +23,7 @@ import 'UI/screens/used_package_screens/shimmer_page.dart';
 import 'UI/screens/custom_paint_screens/custom_paint.dart';
 import 'UI/screens/main_screens/splash_screen.dart';
 import 'UI/screens/stretchy_header.dart';
-import 'UI/screens/notification.dart';
+import 'UI/screens/notification/notification.dart';
 import 'UI/screens/animation_screens/filp_card_screen.dart';
 import 'UI/screens/animation_screens/tween_page.dart';
 

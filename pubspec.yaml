@@ -51,6 +51,7 @@ dependencies:
   google_fonts: any
   google_maps_flutter: ^2.2.5
   just_audio: ^0.9.31
+  awesome_notifications: ^0.7.4+1
   # khalti_flutter: ^2.2.1
   shimmer: ^2.0.0
   sleek_circular_slider: ^2.0.1
