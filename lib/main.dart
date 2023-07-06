@@ -1,10 +1,13 @@
-// // ignore_for_file: unused_local_variable
-
-// import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 // import 'package:flutter/foundation.dart';
 // import 'package:firebase_core/firebase_core.dart';
 // import 'package:flutter_modular/flutter_modular.dart';
 // import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:awesome_notifications/awesome_notifications.dart';
+
+import 'UI/screens/notification/a.dart';
+import 'UI/screens/notification/b.dart';
+import 'UI/screens/notification/services/notification_service.dart';
 
 // // import 'package:khalti_flutter/khalti_flutter.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,6 +26,7 @@
 
 // Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 //   await Firebase.initializeApp();
+
 //   if (kDebugMode) {
 //     print("Handling a background message ${message.messageId}");
 //   }
@@ -33,8 +37,9 @@
 //       NotificationModel.fromJsonString(payload);
 // }
 
-// void main() async {
+// Future<void> main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
+// await NotificationController.initializeLocalNotifications();
 //   await Firebase.initializeApp();
 //   await Future.delayed(const Duration(milliseconds: 300));
 
@@ -79,6 +84,14 @@
 // }
 
 // class _AppState extends ConsumerState<App> {
+// static const String routeHome = '/', routeNotification = '/notification-page';
+
+// @override
+// void initState() {
+//   NotificationController.startListeningNotificationEvents();
+//   super.initState();
+// }
+
 //   @override
 //   Widget build(
 //     BuildContext context,
@@ -130,13 +143,6 @@
 //   }
 // }
 
-import 'package:awesome_notifications/awesome_notifications.dart';
-import 'package:flutter/material.dart';
-
-import 'UI/screens/notification/a.dart';
-import 'UI/screens/notification/b.dart';
-import 'UI/screens/notification/services/notification_service.dart';
-
 Future<void> main() async {
   await NotificationController.initializeLocalNotifications();
   runApp(const MyApp());
@@ -145,7 +151,6 @@ Future<void> main() async {
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
-  // The navigator key is necessary to navigate using static methods
   static final GlobalKey<NavigatorState> navigatorKey =
       GlobalKey<NavigatorState>();
 
@@ -156,8 +161,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _AppState extends State<MyApp> {
-  // This widget is the root of your application.
-
   static const String routeHome = '/', routeNotification = '/notification-page';
 
   @override

@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages, avoid_print
+
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp/main.dart';
@@ -5,14 +7,9 @@ import 'package:http/http.dart' as http;
 
 class NotificationController {
   static ReceivedAction? initialAction;
-
-  ///  *********************************************
-  ///     INITIALIZATIONS
-  ///  *********************************************
-  ///
   static Future<void> initializeLocalNotifications() async {
     await AwesomeNotifications().initialize(
-        null, //'resource://drawable/res_app_icon',//
+        null,
         [
           NotificationChannel(
               channelKey: 'alerts',
@@ -24,34 +21,25 @@ class NotificationController {
               importance: NotificationImportance.High,
               defaultPrivacy: NotificationPrivacy.Private,
               defaultColor: Colors.deepPurple,
+              
               ledColor: Colors.deepPurple)
         ],
         debug: true);
 
-    // Get initial notification action is optional
     initialAction = await AwesomeNotifications()
         .getInitialNotificationAction(removeFromActionEvents: false);
   }
 
-  ///  *********************************************
-  ///     NOTIFICATION EVENTS LISTENER
-  ///  *********************************************
-  ///  Notifications events are only delivered after call this method
   static Future<void> startListeningNotificationEvents() async {
     AwesomeNotifications()
         .setListeners(onActionReceivedMethod: onActionReceivedMethod);
   }
 
-  ///  *********************************************
-  ///     NOTIFICATION EVENTS
-  ///  *********************************************
-  ///
   @pragma('vm:entry-point')
   static Future<void> onActionReceivedMethod(
       ReceivedAction receivedAction) async {
     if (receivedAction.actionType == ActionType.SilentAction ||
         receivedAction.actionType == ActionType.SilentBackgroundAction) {
-      // For background actions, you must hold the execution until the end
       print(
           'Message sent via notification input: "${receivedAction.buttonKeyInput}"');
       await executeLongTaskInBackground();
@@ -64,10 +52,6 @@ class NotificationController {
     }
   }
 
-  ///  *********************************************
-  ///     REQUESTING NOTIFICATION PERMISSIONS
-  ///  *********************************************
-  ///
   static Future<bool> displayNotificationRationale() async {
     bool userAuthorized = false;
     BuildContext context = MyApp.navigatorKey.currentContext!;
@@ -127,9 +111,6 @@ class NotificationController {
         await AwesomeNotifications().requestPermissionToSendNotifications();
   }
 
-  ///  *********************************************
-  ///     BACKGROUND TASKS TEST
-  ///  *********************************************
   static Future<void> executeLongTaskInBackground() async {
     print("starting long task");
     await Future.delayed(const Duration(seconds: 4));
@@ -139,10 +120,6 @@ class NotificationController {
     print("long task done");
   }
 
-  ///  *********************************************
-  ///     NOTIFICATION CREATION METHODS
-  ///  *********************************************
-  ///
   static Future<void> createNewNotification() async {
     bool isAllowed = await AwesomeNotifications().isNotificationAllowed();
     if (!isAllowed) isAllowed = await displayNotificationRationale();
@@ -150,27 +127,35 @@ class NotificationController {
 
     await AwesomeNotifications().createNotification(
         content: NotificationContent(
-            id: -1, // -1 is replaced by a random number
-            channelKey: 'alerts',
-            title: 'Huston! The eagle has landed!',
-            body:
-                "A small step for a man, but a giant leap to Flutter's community!",
-            bigPicture: 'https://storage.googleapis.com/cms-storage-bucket/d406c736e7c4c57f5f61.png',
-            largeIcon: 'https://storage.googleapis.com/cms-storage-bucket/0dbfcc7a59cd1cf16282.png',
-            //'asset://assets/images/balloons-in-sky.jpg',
-            notificationLayout: NotificationLayout.BigPicture,
-            payload: {'notificationId': '1234567890'}),
+          id: -1,
+          channelKey: 'alerts',
+          title: 'Sagar Kafle ',
+          roundedLargeIcon: true,
+          actionType: ActionType.KeepOnTop,
+          body: "Hello notificatoin aayo?",
+          bigPicture:
+              'https://img.freepik.com/free-vector/push-notifications-concept-illustration_114360-4730.jpg?w=740&t=st=1688626203~exp=1688626803~hmac=8f0963801fe13347bd666fd6eed659de29ef509a1670214ab18bf6c2e21b61a3',
+          largeIcon:
+              'https://img.freepik.com/free-vector/push-notifications-concept-illustration_114360-4730.jpg?w=740&t=st=1688626203~exp=1688626803~hmac=8f0963801fe13347bd666fd6eed659de29ef509a1670214ab18bf6c2e21b61a3',
+          notificationLayout: NotificationLayout.BigPicture,
+          payload: {'notificationId': '1234567890'},
+        ),
         actionButtons: [
           NotificationActionButton(key: 'REDIRECT', label: 'Redirect'),
           NotificationActionButton(
             key: 'REPLY',
-            label: 'Reply Message',
+            label: 'Reply',
             requireInputText: true,
+            // this is the color of reply message button
+            color: Colors.orange,
             actionType: ActionType.SilentAction,
+            enabled: true,
           ),
           NotificationActionButton(
             key: 'DISMISS',
             label: 'Dismiss',
+            // this is the color of redirect button
+            color: Colors.orange,
             actionType: ActionType.DismissAction,
             isDangerousOption: true,
           )
@@ -184,15 +169,15 @@ class NotificationController {
 
     await AwesomeNotifications().createNotification(
         content: NotificationContent(
-            id: -1, // -1 is replaced by a random number
+            id: -1,
             channelKey: 'alerts',
-            title: "Huston! The eagle has landed!",
-            body:
-                "A small step for a man, but a giant leap to Flutter's community!",
-            bigPicture: 'https://storage.googleapis.com/cms-storage-bucket/d406c736e7c4c57f5f61.png',
-            largeIcon: 'https://storage.googleapis.com/cms-storage-bucket/0dbfcc7a59cd1cf16282.png',
-            //'asset://assets/images/balloons-in-sky.jpg',
-            notificationLayout: NotificationLayout.BigPicture,
+            title: 'Sagar Kafle ',
+            roundedLargeIcon: true,
+            actionType: ActionType.KeepOnTop,
+            body: "Hello notificatoin aayo?",
+            bigPicture:
+                'https://img.freepik.com/free-vector/push-notifications-concept-illustration_114360-4730.jpg?w=740&t=st=1688626203~exp=1688626803~hmac=8f0963801fe13347bd666fd6eed659de29ef509a1670214ab18bf6c2e21b61a3',
+            largeIcon: 'https://img.freepik.com/free-vector/push-notifications-concept-illustration_114360-4730.jpg?w=740&t=st=1688626203~exp=1688626803~hmac=8f0963801fe13347bd666fd6eed659de29ef509a1670214ab18bf6c2e21b61a3',
             payload: {
               'notificationId': '1234567890'
             }),
