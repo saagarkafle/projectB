@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../main.dart';
+import 'package:whatsapp/UI/screens/notification/services/notification_service.dart';
 
 class Apage extends StatefulWidget {
   const Apage({super.key, required this.title});
